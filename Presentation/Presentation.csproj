@@ -110,6 +110,7 @@
     <Content Include="Views\Layouts\_LayoutAdminSystem.cshtml" />
     <Content Include="Views\Index\Home.cshtml" />
     <Content Include="Views\ClientBusiness\ListClientBusiness.cshtml" />
+    <Content Include="Views\ClientBusiness\EditClientBusiness.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

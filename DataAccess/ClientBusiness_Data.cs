@@ -43,5 +43,39 @@ namespace DataAccess
 
             return list;
         }
+
+        public ClientBusiness_Entity searchTeacher(int id)
+        {
+            ClientBusiness_Entity client_business = new ClientBusiness_Entity();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("search_client_business", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idClient";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = id;
+
+                sqlCommand.Parameters.Add(id_parameter);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                sqlDataReader.Read();
+
+                if (sqlDataReader.HasRows)
+                {
+                    client_business.id_client_business = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    client_business.name_client_business = sqlDataReader["Nombre Empresa"].ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return client_business;
+        }
     }
 }

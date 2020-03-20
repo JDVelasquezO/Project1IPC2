@@ -14,7 +14,22 @@ namespace Presentation.Controllers
         // GET: ClientBusiness
         public ActionResult ListClientBusiness()
         {
-            return PartialView(clientBusiness_Logic.listClientBusiness());
+            if (Session["user"] == null)
+            {
+                return Content("<script>" +
+                                    "alert('Sesion Expirada'); " +
+                                    "window.location.href='/Auth/Login' " +
+                                "</script>");
+            }
+            else
+            {
+                return PartialView(clientBusiness_Logic.listClientBusiness());
+            }
+        }
+
+        public ActionResult EditClientBusiness(int id)
+        {
+            return View(clientBusiness_Logic.searchClientBusiness(id));
         }
     }
 }

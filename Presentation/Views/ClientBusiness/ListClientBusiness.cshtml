@@ -8,9 +8,11 @@
             <li class="collection-item">
                 <div>
                     @item.id_client_business - @item.name_client_business
-                    <a href="#!" class="secondary-content">
-                        <i class="blue-text material-icons">info</i>
-                    </a>
+                    <div class="right-align">
+                        <a href="#!" class="secondary-content">
+                            @Html.ActionLink("Información", "EditClientBusiness", new { id = item.id_client_business })
+                        </a>
+                    </div>
                 </div>
             </li>
         }

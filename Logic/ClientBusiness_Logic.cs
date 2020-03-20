@@ -16,5 +16,10 @@ namespace Logic
         {
             return clientBusiness_Data.listClientBusiness();
         }
+
+        public ClientBusiness_Entity searchClientBusiness(int id)
+        {
+            return clientBusiness_Data.searchTeacher(id);
+        }
     }
 }
