@@ -23,7 +23,7 @@
     <div class="col s12">
         <div class="card">
             <div class="card-content">
-                <h3>Cliente @Model.name_client_business</h3>
+                <span class="card-title">Cliente @Model.name_client_business</span>
                 <table class="responsive-table">
                     <thead>
                         <tr>
@@ -55,21 +55,21 @@
 
                             <td>
                                 <div class="input-field col s12">
-                                    <input placeholder="Placeholder" value="@Model.typeBusiness_Entity.type_business" id="first_name" type="text" class="validate">
+                                    <input readonly placeholder="Placeholder" value="@Model.typeBusiness_Entity.type_business" id="first_name" type="text" class="validate">
                                     <label for="first_name">Tipo de Empresa</label>
                                 </div>
                             </td>
 
                             <td>
                                 <div class="input-field col s12">
-                                    <input placeholder="Placeholder" value="@Model.sizeBusiness_Entity.size" id="first_name" type="text" class="validate">
+                                    <input readonly placeholder="Placeholder" value="@Model.sizeBusiness_Entity.size" id="first_name" type="text" class="validate">
                                     <label for="first_name">Tamaño de Empresa</label>
                                 </div>
                             </td>
 
                             <td>
                                 <div class="input-field col s12">
-                                    <input placeholder="Placeholder" value="@Model.typeCard_Entity.type_card" id="first_name" type="text" class="validate">
+                                    <input readonly placeholder="Placeholder" value="@Model.typeCard_Entity.type_card" id="first_name" type="text" class="validate">
                                     <label for="first_name">Tarjeta de Crédito</label>
                                 </div>
                             </td>

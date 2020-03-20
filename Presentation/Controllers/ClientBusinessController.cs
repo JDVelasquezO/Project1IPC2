@@ -57,5 +57,10 @@ namespace Presentation.Controllers
                 return View(clientBusiness_Logic.searchClientBusiness(id));
             }
         }
+
+        public ActionResult AddClientBusiness()
+        {
+            return View();
+        }
     }
 }

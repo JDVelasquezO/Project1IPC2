@@ -13,6 +13,28 @@
             margin-top: 5%;
             box-shadow: none;
         }
+
+        .tabs .tab a {
+            color: #1BA1E2;
+        }
+            /*Black color to the text*/
+
+            .tabs .tab a:hover {
+                background-color: #eee;
+                color: #1BA1E2;
+            }
+            /*Text color on hover*/
+
+            .tabs .tab a.active {
+                background-color: #fff;
+                color: #1EB0F7;
+            }
+        /*Background and text color when a tab is active*/
+
+        .tabs .indicator {
+            background-color: #1EB0F7;
+        }
+        /*Color of underline*/
     </style>
 </head>
 <body class="grey lighten-4">
@@ -58,6 +80,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.collapsible');
             var instances = M.Collapsible.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, {
+                defaultDate: Date.now()
+            });
         });
 
     </script>

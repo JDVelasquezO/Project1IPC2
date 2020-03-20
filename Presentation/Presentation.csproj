@@ -111,6 +111,7 @@
     <Content Include="Views\Index\Home.cshtml" />
     <Content Include="Views\ClientBusiness\ListClientBusiness.cshtml" />
     <Content Include="Views\ClientBusiness\EditClientBusiness.cshtml" />
+    <Content Include="Views\ClientBusiness\AddClientBusiness.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
