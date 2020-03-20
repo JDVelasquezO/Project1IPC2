@@ -1,0 +1,9 @@
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\bin\Debug\Entity.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\bin\Debug\Entity.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\DataAccess\obj\Debug\DataAccess.pdb

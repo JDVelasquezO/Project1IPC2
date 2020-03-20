@@ -1,0 +1,11 @@
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\bin\Debug\Logic.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\bin\Debug\Logic.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\bin\Debug\DataAccess.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\bin\Debug\Entity.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\bin\Debug\DataAccess.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\bin\Debug\Entity.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\obj\Debug\Logic.csprojAssemblyReference.cache
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\obj\Debug\Logic.csproj.CopyComplete
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\obj\Debug\Logic.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Logic\obj\Debug\Logic.pdb

@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ClientBusinessController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -108,6 +109,7 @@
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Layouts\_LayoutAdminSystem.cshtml" />
     <Content Include="Views\Index\Home.cshtml" />
+    <Content Include="Views\ClientBusiness\ListClientBusiness.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -119,6 +121,20 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Public\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{d6a659aa-b66d-4292-bb42-d67c3fa6b1e1}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{D4737C89-12BA-464C-B163-A08B63442031}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{e6470814-5241-4b33-b481-52df671c8669}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -73,3 +73,9 @@ C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presenta
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\obj\Debug\Presentation.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\obj\Debug\Presentation.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\DataAccess.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Entity.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Logic.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\DataAccess.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Entity.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Logic.pdb

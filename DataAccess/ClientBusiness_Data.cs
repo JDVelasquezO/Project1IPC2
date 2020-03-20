@@ -18,7 +18,6 @@ namespace DataAccess
         public List<ClientBusiness_Entity> listClientBusiness()
         {
             List<ClientBusiness_Entity> list = new List<ClientBusiness_Entity>();
-            ClientBusiness_Entity client_business = new ClientBusiness_Entity();
 
             try
             {
@@ -30,6 +29,7 @@ namespace DataAccess
 
                 while (sqlDataReader.Read())
                 {
+                    ClientBusiness_Entity client_business = new ClientBusiness_Entity();
                     client_business.id_client_business = Convert.ToInt32(sqlDataReader["Identificador"]);
                     client_business.name_client_business = sqlDataReader["Nombre Empresa"].ToString();
 
