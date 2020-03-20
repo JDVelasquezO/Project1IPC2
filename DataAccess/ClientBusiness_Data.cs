@@ -68,6 +68,10 @@ namespace DataAccess
                 {
                     client_business.id_client_business = Convert.ToInt32(sqlDataReader["Identificador"]);
                     client_business.name_client_business = sqlDataReader["Nombre Empresa"].ToString();
+                    client_business.quantity_employees = Convert.ToInt32(sqlDataReader["Cantidad de Empleados"]);
+                    client_business.typeBusiness_Entity.type_business = sqlDataReader["Tipo de Empresa"].ToString();
+                    client_business.sizeBusiness_Entity.size = sqlDataReader["Tamaño de Empresa"].ToString();
+                    client_business.typeCard_Entity.type_card = sqlDataReader["Tarjeta de Crédito"].ToString();
                 }
             }
             catch (Exception e)

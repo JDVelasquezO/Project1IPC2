@@ -9,6 +9,6 @@ namespace Entity
     public class TypeCard_Entity
     {
         public int id_type_card { get; set; }
-        public string type_carg { get; set; }
+        public string type_card { get; set; }
     }
 }

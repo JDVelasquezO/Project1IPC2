@@ -5,5 +5,90 @@
     Layout = "~/Views/Layouts/_LayoutAdminSystem.cshtml";
 }
 
-<h2>EditClientBusiness</h2>
+<nav>
+    <div class="nav-wrapper blue">
+        <div class="col s12">
+            &nbsp;&nbsp;
+            <a href="/Index/Home" class="breadcrumb">Home</a>
+            <a href="#" class="breadcrumb">Clientes</a>
+        </div>
+    </div>
+</nav>
 
+<br /><br />
+
+<h3>Cliente Alvin</h3>
+<table class="responsive-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad de Empleados</th>
+            <th>Tipo de Empresa</th>
+            <th>Tamaño de Empresa</th>
+            <th>Tarjeta de Crédito</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.id_client_business</td>
+            <td>
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" value="@Model.name_client_business" id="first_name" type="text" class="validate">
+                    <label for="first_name">Nombre</label>
+                </div>
+            </td>
+
+            <td>
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" value="@Model.quantity_employees" id="first_name" type="number" class="validate">
+                    <label for="first_name">No. Empleados</label>
+                </div>
+            </td>
+
+            <td>
+                <select>
+                    <option value="" disabled>Seleccionar Tipo</option>
+                    <option selected value="1">Comercial</option>
+                    <option value="2">Financiera</option>
+                    <option value="3">Servicios</option>
+                </select>
+                <label>Seleccionar Tipo</label>
+            </td>
+
+
+            <td>
+                <select>
+                    <option value="" disabled>Seleccionar Tamaño</option>
+                    <option value="1">Pequeña</option>
+                    <option selected value="2">Mediana</option>
+                    <option value="3">Grande</option>
+                </select>
+                <label>Seleccionar Tamaño</label>
+            </td>
+
+            <td>
+                <select>
+                    <option value="" disabled>Seleccionar Tarjeta</option>
+                    <option value="1">MASTERCARD</option>
+                    <option selected value="2">VISA</option>
+                </select>
+                <label>Seleccionar Tarjeta</label>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="buttons">
+    <button class="btn waves-effect blue" type="submit" name="action">
+        Actualizar
+        <i class="material-icons right">autorenew</i>
+    </button>
+
+    <button class="btn waves-effect red" type="submit" name="action">
+        Eliminar
+        <i class="material-icons right">delete_forever</i>
+    </button>
+</div>
+<br /><br />
