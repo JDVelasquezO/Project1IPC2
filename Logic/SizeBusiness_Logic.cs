@@ -12,9 +12,9 @@ namespace Logic
     {
         SizeBusiness_Data sizeBusiness_Data = new SizeBusiness_Data();
 
-        public List<SizeBusiness_Entity> listTypeCard()
+        public List<SizeBusiness_Entity> listSizeBusiness()
         {
-            return sizeBusiness_Data.listTypeCard();
+            return sizeBusiness_Data.listSizeBusiness();
         }
     }
 }

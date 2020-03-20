@@ -43,7 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientBusiness_Data.cs" />
+    <Compile Include="CreditCard_Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SizeBusiness_Data.cs" />
+    <Compile Include="TypeBusiness_Data.cs" />
+    <Compile Include="TypeCard_Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">

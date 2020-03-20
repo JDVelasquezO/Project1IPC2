@@ -15,7 +15,7 @@ namespace DataAccess
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
 
-        public List<SizeBusiness_Entity> listTypeCard()
+        public List<SizeBusiness_Entity> listSizeBusiness()
         {
             List<SizeBusiness_Entity> list = new List<SizeBusiness_Entity>();
 
