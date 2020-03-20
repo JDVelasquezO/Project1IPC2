@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Layouts/_LayoutPage1.cshtml";
+}
+
+<div class="row">
+    <div class="col s12">
+        <div class="card container">
+            <div class="card-content black-text">
+                <span class="card-title">Inicio de Sesión</span><br />
+                <div class="row">
+                    <div id="form" class="col s12">
+                        @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+                        {
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input autofocus name="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input name="pass" type="password" class="validate">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+
+                            <button class="btn waves-effect light-blue darken-1" type="submit" name="action">
+                                Entrar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Entity\bin\Debug\Entity.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Entity\bin\Debug\Entity.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Entity\obj\Debug\Entity.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Entity\obj\Debug\Entity.pdb
