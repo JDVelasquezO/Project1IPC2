@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientBusiness_Data.cs" />
+    <Compile Include="Conctact_Data.cs" />
     <Compile Include="CreditCard_Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SizeBusiness_Data.cs" />

@@ -19,12 +19,17 @@ namespace Logic
 
         public ClientBusiness_Entity searchClientBusiness(int id)
         {
-            return clientBusiness_Data.searchTeacher(id);
+            return clientBusiness_Data.searchClientBusiness(id);
         }
 
         public bool addClientBusiness(ClientBusiness_Entity client_business)
         {
             return clientBusiness_Data.addClientBusiness(client_business);
+        }
+
+        public bool deleteClientBusiness(int id)
+        {
+            return clientBusiness_Data.deleteClientBusiness(id);
         }
     }
 }

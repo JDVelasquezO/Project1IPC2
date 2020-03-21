@@ -117,8 +117,15 @@
                     </button>
 
                     <button class="btn waves-effect red" type="submit" name="action">
-                        Eliminar
+                        @Html.ActionLink("Eliminar", "DeleteClientBusiness",
+                       new { idClientBusiness = @Model.id_client_business })
                         <i class="material-icons right">delete_forever</i>
+                    </button>
+
+                    <button class="btn waves-effect cyan" type="submit" name="action">
+                        @Html.ActionLink("Contactos", "InfoContact",
+                        new { idClientBusiness = @Model.id_client_business })
+                        <i class="material-icons right">account_circle</i>
                     </button>
                 </div>
             </div>

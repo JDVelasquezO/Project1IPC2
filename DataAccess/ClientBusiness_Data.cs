@@ -44,7 +44,7 @@ namespace DataAccess
             return list;
         }
 
-        public ClientBusiness_Entity searchTeacher(int id)
+        public ClientBusiness_Entity searchClientBusiness(int id)
         {
             ClientBusiness_Entity client_business = new ClientBusiness_Entity();
 
@@ -142,6 +142,35 @@ namespace DataAccess
             }
 
             return response;
+        }
+
+        public bool deleteClientBusiness(int id)
+        {
+            bool deleted = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("delete_client_business", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_client_business = new SqlParameter();
+                id_client_business.ParameterName = "@idClientBusiness";
+                id_client_business.SqlDbType = SqlDbType.Int;
+                id_client_business.Value = id;
+
+                sqlCommand.Parameters.Add(id_client_business);
+                sqlCommand.ExecuteNonQuery();
+
+                deleted = true;
+
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return deleted;
         }
     }
 }

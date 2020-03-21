@@ -135,5 +135,25 @@ namespace Presentation.Controllers
 
             return Content(script);
         }
+
+        public ActionResult DeleteClientBusiness(int idClientBusiness)
+        {
+            string script = "";
+
+            if (clientBusiness_Logic.deleteClientBusiness(idClientBusiness))
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('Registro eliminado correctamente');" +
+                            "window.location.href='/Index/Home';" +
+                         "</script>";
+            }
+
+            return Content(script);
+        }
+
+        public ActionResult InfoContact(int idClientBusiness)
+        {
+            return View(clientBusiness_Logic.searchClientBusiness(idClientBusiness));
+        }
     }
 }
