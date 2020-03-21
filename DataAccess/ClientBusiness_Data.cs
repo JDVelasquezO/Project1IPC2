@@ -72,6 +72,7 @@ namespace DataAccess
                     client_business.typeBusiness_Entity.type_business = sqlDataReader["Tipo de Empresa"].ToString();
                     client_business.sizeBusiness_Entity.size = sqlDataReader["Tamaño de Empresa"].ToString();
                     client_business.typeCard_Entity.type_card = sqlDataReader["Tarjeta de Crédito"].ToString();
+                    client_business.sizeBusiness_Entity.name_size = sqlDataReader["Nombre Tamaño"].ToString();
                 }
             }
             catch (Exception e)

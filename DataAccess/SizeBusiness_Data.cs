@@ -32,6 +32,7 @@ namespace DataAccess
                     SizeBusiness_Entity size_business = new SizeBusiness_Entity();
                     size_business.id_size_business = Convert.ToInt32(sqlDataReader["Identificador"]);
                     size_business.size = sqlDataReader["Tamaño"].ToString();
+                    size_business.name_size = sqlDataReader["Nombre Tamaño"].ToString();
 
                     list.Add(size_business);
                 }

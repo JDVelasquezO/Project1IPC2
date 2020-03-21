@@ -10,5 +10,6 @@ namespace Entity
     {
         public int id_size_business { get; set; }
         public string size { get; set; }
+        public string name_size { get; set; }
     }
 }
