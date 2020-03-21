@@ -81,5 +81,66 @@ namespace DataAccess
 
             return client_business;
         }
+
+        public bool addClientBusiness(ClientBusiness_Entity client_business)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("add_client_business", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_idTypeBusiness = new SqlParameter();
+                p_idTypeBusiness.ParameterName = "@idTypeBusiness";
+                p_idTypeBusiness.SqlDbType = SqlDbType.Int;
+                p_idTypeBusiness.Value = client_business.typeBusiness_Entity.id_type_business;
+
+                SqlParameter p_idSizeBusiness = new SqlParameter();
+                p_idSizeBusiness.ParameterName = "@idSizebusiness";
+                p_idSizeBusiness.SqlDbType = SqlDbType.Int;
+                p_idSizeBusiness.Value = client_business.sizeBusiness_Entity.id_size_business;
+
+                SqlParameter p_idCreditCard = new SqlParameter();
+                p_idCreditCard.ParameterName = "@idCreditCard";
+                p_idCreditCard.SqlDbType = SqlDbType.Int;
+                p_idCreditCard.Value = client_business.creditCard_Entity.id_credit_card;
+
+                SqlParameter p_nit = new SqlParameter();
+                p_nit.ParameterName = "@nit";
+                p_nit.SqlDbType = SqlDbType.VarChar;
+                p_nit.Size = 20;
+                p_nit.Value = client_business.nit;
+
+                SqlParameter p_nameClientBusiness = new SqlParameter();
+                p_nameClientBusiness.ParameterName = "@nameClientBusiness";
+                p_nameClientBusiness.SqlDbType = SqlDbType.VarChar;
+                p_nameClientBusiness.Size = 20;
+                p_nameClientBusiness.Value = client_business.name_client_business;
+
+                SqlParameter p_quantityEmployees = new SqlParameter();
+                p_quantityEmployees.ParameterName = "@quantityEmployess";
+                p_quantityEmployees.SqlDbType = SqlDbType.Int;
+                p_quantityEmployees.Value = client_business.quantity_employees;
+
+                sqlCommand.Parameters.Add(p_idTypeBusiness);
+                sqlCommand.Parameters.Add(p_idSizeBusiness);
+                sqlCommand.Parameters.Add(p_idCreditCard);
+                sqlCommand.Parameters.Add(p_nit);
+                sqlCommand.Parameters.Add(p_nameClientBusiness);
+                sqlCommand.Parameters.Add(p_quantityEmployees);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }

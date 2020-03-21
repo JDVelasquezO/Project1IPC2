@@ -21,5 +21,10 @@ namespace Logic
         {
             return clientBusiness_Data.searchTeacher(id);
         }
+
+        public bool addClientBusiness(ClientBusiness_Entity client_business)
+        {
+            return clientBusiness_Data.addClientBusiness(client_business);
+        }
     }
 }

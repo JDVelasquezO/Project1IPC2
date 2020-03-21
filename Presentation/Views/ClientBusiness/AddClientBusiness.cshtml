@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "AddClientBusiness";
     Layout = "~/Views/Layouts/_LayoutAdminSystem.cshtml";
+
+    var listTypeBusiness = ViewBag.ListTypeBusiness; // Llamamos al ViewBag de la lista
+    var listSizeBusiness = ViewBag.ListSizeBusiness; // Llamamos al ViewBag de la lista
+    var listTypeCard = ViewBag.ListTypeCard; // Llamamos al ViewBag de la lista
+    var listCreditCard = ViewBag.ListCreditCard; // Llamamos al ViewBag de la lista
 }
 
 <nav>
@@ -23,95 +28,117 @@
                 <div class="row container">
                     <div class="col s12">
                         <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-                            <li class="tab col s6"><a class="active" href="#test1">Información Básica</a></li>
-                            <li class="tab col s6"><a href="#test2">Tarjeta de Crédito</a></li>
+                            <li class="tab col s6"><a class="active" href="#test1">Tarjeta de Crédito</a></li>
+                            <li class="tab col s6"><a href="#test2">Información Básica</a></li>
                         </ul>
                     </div>
 
                     <div id="test1" class="col s12">
                         <br><br>
+                            <div class="row">
+                                @using (Html.BeginForm("InsertCreditCard", "CreditCard", FormMethod.Post))
+                                {
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input autofocus name="number_card" type="text" class="validate">
+                                            <label for="first_name">Numero de Tarjeta</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="name_card" type="text" class="validate">
+                                            <label for="last_name">Nombre de Tarjeta</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="date" name="date_expiration" style="cursor: pointer;" placeholder="Fecha de Expiración" type="text" class="datepicker">
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="crv" type="number" class="validate">
+                                            <label for="last_name">CRV</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <select name="cbxTypeCard">
+                                                <option value="" disabled selected>Tipo de Tarjeta</option>
+                                                @foreach (var item in listTypeCard)
+                                                {
+                                                    <option value="@item.id_type_card">@item.type_card</option>
+                                                }
+                                            </select>
+                                            <label>Tipo de Tarjeta</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                                                Agregar Tarjeta
+                                                <i class="material-icons right">add</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                    </div>
+
+                    <div id="test2" class="col s12">
+                        <br><br>
                         <div class="row">
-                            <form class="col s12">
+                            @using (Html.BeginForm("InsertClientBusiness", "ClientBusiness", FormMethod.Post))
+                            {
+                            <div class="col s12">
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <input autofocus placeholder="Nombre" name="business_name" type="text" class="validate">
                                         <label for="first_name">Nombre de Empresa</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input name="nit_business" type="number" class="validate">
+                                        <input name="nit_business" type="text" class="validate">
                                         <label for="last_name">NIT</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <select>
-                                            <option value="" disabled selected>Cantidad de Empleados</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
-                                        <label>Materialize Select</label>
+                                        <input name="quantEmployees" type="number" class="validate">
+                                        <label for="last_name">Numero de empleados</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <select>
+                                        <select name="cbxTypeBusiness">
                                             <option value="" disabled selected>Tipo de Empresa</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
+                                            @foreach (var item in listTypeBusiness)
+                                            {
+                                                <option value="@item.id_type_business">@item.type_business</option>
+                                            }
                                         </select>
                                         <label>Materialize Select</label>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div id="test2" class="col s12">
-                        <br><br>
-                        <div class="row">
-                            <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input autofocus id="first_name" type="number" class="validate">
-                                        <label for="first_name">Numero de Tarjeta</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input id="last_name" type="text" class="validate">
-                                        <label for="last_name">Nombre de Tarjeta</label>
-                                    </div>
-                                </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input style="cursor: pointer;" placeholder="Fecha de Expiración" type="text" class="datepicker">
+                                        <select name="cbxCreditCard">
+                                            <option value="" disabled selected>Nombre de Tarjeta</option>
+                                            @foreach (var item in listCreditCard)
+                                            {
+                                                <option value="@item.id_credit_card">@item.name_card</option>
+                                            }
+                                        </select>
+                                        <label>Nombre de tarjeta</label>
                                     </div>
                                     <div class="input-field col s6">
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="number" class="validate">
-                                            <label for="last_name">CRV</label>
+                                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                                                Agregar Cliente
+                                                <i class="material-icons right">add</i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <select>
-                                            <option value="" disabled selected>Tipo de Tarjeta</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
-                                        <label>Materialize Select</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <button class="btn waves-effect waves-light" type="submit" name="action">
-                                            Agregar
-                                            <i class="material-icons right">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+                            }
                         </div>
                     </div>
                 </div>
