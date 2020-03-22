@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Contact_Entity
     {
+        public int id_contact { get; set; }
         public string name_contact { get; set; }
         public string dpi_contact { get; set; }
         public string celphone { get; set; }
@@ -16,6 +17,6 @@ namespace Entity
         public string email { get; set; }
         public string address_office { get; set; }
         public TypeContact_Entity typeContact = new TypeContact_Entity();
-        public ClientBusiness_Entity clientBusiness = new ClientBusiness_Entity();
+        public ClientBusiness_Entity client_business = new ClientBusiness_Entity();
     }
 }

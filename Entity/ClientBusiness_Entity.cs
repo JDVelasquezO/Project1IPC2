@@ -16,6 +16,5 @@ namespace Entity
         public SizeBusiness_Entity sizeBusiness_Entity = new SizeBusiness_Entity();
         public TypeBusiness_Entity typeBusiness_Entity = new TypeBusiness_Entity();
         public TypeCard_Entity typeCard_Entity = new TypeCard_Entity();
-        public Contact_Entity contact_Entity = new Contact_Entity();
     }
 }
