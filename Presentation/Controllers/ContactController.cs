@@ -30,7 +30,7 @@ namespace Presentation.Controllers
             {
                 script = "<script>" +
                             "alert('Contacto Agregado Correctamente'); " +
-                            "window.location.href = '/Home/Index'" +
+                            "window.location.href = '/Index/Home'" +
                          "</script>";
             } else
             {

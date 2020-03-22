@@ -15,14 +15,14 @@ namespace DataAccess
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
 
-        public bool addComercialContact(Contact_Entity contact)
+        public bool functionForAddContact(string procedure, Contact_Entity contact)
         {
             bool response = false;
 
             try
             {
                 sqlConnection.Open();
-                sqlCommand = new SqlCommand("add_comercial_contact", sqlConnection);
+                sqlCommand = new SqlCommand(procedure, sqlConnection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter p_nameContact = new SqlParameter();
@@ -91,6 +91,11 @@ namespace DataAccess
             }
 
             return response;
+        }
+
+        public bool addComercialContact(Contact_Entity contact)
+        {
+            return this.functionForAddContact("add_comercial_contact", contact);
         }
 
         public Contact_Entity searchContact(int id)
