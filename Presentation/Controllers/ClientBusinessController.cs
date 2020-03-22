@@ -11,6 +11,7 @@ namespace Presentation.Controllers
     public class ClientBusinessController : Controller
     {
         ClientBusiness_Logic clientBusiness_Logic = new ClientBusiness_Logic();
+        Contact_Logic contact_Logic = new Contact_Logic();
 
         List<TypeBusiness_Entity> list_type_business = new List<TypeBusiness_Entity>();
         TypeBusiness_Logic typeBusiness_Logic = new TypeBusiness_Logic();
@@ -24,8 +25,8 @@ namespace Presentation.Controllers
         List<CreditCard_Entity> list_credit_card = new List<CreditCard_Entity>();
         CreditCard_Logic creditCard_Logic = new CreditCard_Logic();
 
-        List<Contact_Entity> list_contact = new List<Contact_Entity>();
-        Contact_Logic contact_Logic = new Contact_Logic();
+        /*List<Contact_Entity> list_contact = new List<Contact_Entity>();
+        Contact_Logic contact_Logic = new Contact_Logic();*/
 
         // GET: ClientBusiness
         public ActionResult ListClientBusiness()
@@ -156,7 +157,7 @@ namespace Presentation.Controllers
 
         public ActionResult InfoContact(int idClientBusiness)
         {
-            return View(clientBusiness_Logic.searchClientBusiness(idClientBusiness));
+            return View(clientBusiness_Logic.searchContact(idClientBusiness));
         }
     }
 }

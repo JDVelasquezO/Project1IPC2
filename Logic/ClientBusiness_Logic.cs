@@ -31,5 +31,10 @@ namespace Logic
         {
             return clientBusiness_Data.deleteClientBusiness(id);
         }
+
+        public List<Contact_Entity> searchContact(int id)
+        {
+            return clientBusiness_Data.searchContact(id);
+        }
     }
 }

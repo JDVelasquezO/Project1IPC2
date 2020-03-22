@@ -1,10 +1,28 @@
-﻿@model Entity.ClientBusiness_Entity
+﻿@model List<Entity.Contact_Entity>
 
 @{
     ViewBag.Title = "InfoContact";
     Layout = "~/Views/Layouts/_LayoutAdminSystem.cshtml";
 
-    var listContact = ViewBag.ListTypeCard; // Llamamos al ViewBag de la lista
+    int idClientBusiness = 0;
+
+    List<int> idsContact = new List<int>();
+    List<String> namesContact = new List<String>();
+    List<String> dpisContact = new List<String>();
+    List<String> celsContact = new List<String>();
+    List<String> officeContact = new List<String>();
+    List<String> addressesContact = new List<String>();
+
+    foreach(var item in Model)
+    {
+        idClientBusiness = item.client_business.id_client_business;
+        idsContact.Add(item.id_contact);
+        namesContact.Add(item.name_contact);
+        dpisContact.Add(item.dpi_contact);
+        celsContact.Add(item.celphone);
+        officeContact.Add(item.officephone);
+        addressesContact.Add(item.address_office);
+    }
 }
 
 <nav>
@@ -12,7 +30,7 @@
         <div class="col s12">
             &nbsp;&nbsp;
             <a href="/Index/Home" class="breadcrumb">Home</a>
-            <a href="/ClientBusiness/EditClientBusiness/@Model.id_client_business" class="breadcrumb">Clientes</a>
+            <a href="/ClientBusiness/EditClientBusiness/@idClientBusiness" class="breadcrumb">Clientes</a>
             <a href="#" class="breadcrumb">Contactos</a>
         </div>
     </div>
@@ -39,29 +57,29 @@
                             <form class="col s12">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input autofocus placeholder="Nombre" type="text" class="validate">
+                                        <input value="@namesContact[0]" placeholder="Nombre" type="text" class="validate">
                                         <label for="first_name">Nombre</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@dpisContact[0]" id="last_name" type="number" class="validate">
                                         <label for="last_name">DPI</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@celsContact[0]" id="last_name" type="number" class="validate">
                                         <label for="last_name">Celular</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@officeContact[0]" id="last_name" type="number" class="validate">
                                         <label for="last_name">Teléfono de oficina</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="last_name" type="text" class="validate">
+                                        <input value="@addressesContact[0]" id="last_name" type="text" class="validate">
                                         <label for="last_name">Dirección</label>
                                     </div>
                                 </div>
@@ -75,29 +93,29 @@
                             <form class="col s12">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input autofocus placeholder="Nombre" id="first_name" type="text" class="validate">
+                                        <input value="@namesContact[1]" placeholder="Nombre" id="first_name" type="text" class="validate">
                                         <label for="first_name">Nombre</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@dpisContact[1]" id="last_name" type="number" class="validate">
                                         <label for="last_name">DPI</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@celsContact[1]" id="last_name" type="number" class="validate">
                                         <label for="last_name">Celular</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@officeContact[1]" id="last_name" type="number" class="validate">
                                         <label for="last_name">Teléfono de oficina</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="last_name" type="text" class="validate">
+                                        <input value="@addressesContact[1]" id="last_name" type="text" class="validate">
                                         <label for="last_name">Dirección</label>
                                     </div>
                                 </div>
@@ -111,29 +129,29 @@
                             <form class="col s12">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input autofocus placeholder="Nombre" id="first_name" type="text" class="validate">
+                                        <input value="@namesContact[2]" placeholder="Nombre" id="first_name" type="text" class="validate">
                                         <label for="first_name">Nombre</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@dpisContact[2]" id="last_name" type="number" class="validate">
                                         <label for="last_name">DPI</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@celsContact[2]" id="last_name" type="number" class="validate">
                                         <label for="last_name">Celular</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="number" class="validate">
+                                        <input value="@officeContact[2]" id="last_name" type="number" class="validate">
                                         <label for="last_name">Teléfono de oficina</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="last_name" type="text" class="validate">
+                                        <input value="@addressesContact[2]" id="last_name" type="text" class="validate">
                                         <label for="last_name">Dirección</label>
                                     </div>
                                 </div>

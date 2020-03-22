@@ -33,9 +33,8 @@ namespace DataAccess
                 sqlCommand.Parameters.Add(id_parameter);
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                sqlDataReader.Read();
 
-                if (sqlDataReader.HasRows)
+                while (sqlDataReader.Read())
                 {
                     contact.id_contact = Convert.ToInt32(sqlDataReader["Identificador"]);
                     contact.name_contact = sqlDataReader["Nombre Contacto"].ToString();
