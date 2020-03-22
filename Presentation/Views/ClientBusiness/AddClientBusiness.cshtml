@@ -25,19 +25,20 @@
             <div class="card-content">
                 <h2 class="card-title">Agregar Cliente</h2>
                 <hr>
-                <div class="row container">
+                <div class="row">
                     <div class="col s12">
                         <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-                            <li class="tab col s6"><a class="active" href="#test1">Tarjeta de Crédito</a></li>
-                            <li class="tab col s6"><a href="#test2">Información Básica</a></li>
+                            <li class="tab col s4"><a class="active" href="#test1">Tarjeta de Crédito</a></li>
+                            <li class="tab col s4"><a href="#test2">Información Básica</a></li>
+                            <li class="tab col s4"><a href="#test3">Información de Contactos</a></li>
                         </ul>
                     </div>
 
                     <div id="test1" class="col s12">
                         <br><br>
-                            <div class="row">
-                                @using (Html.BeginForm("InsertCreditCard", "CreditCard", FormMethod.Post))
-                                {
+                        <div class="row">
+                            @using (Html.BeginForm("InsertCreditCard", "CreditCard", FormMethod.Post))
+                            {
                                 <div class="col s12">
                                     <div class="row">
                                         <div class="input-field col s6">
@@ -79,8 +80,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                }
-                            </div>
+                            }
+                        </div>
                     </div>
 
                     <div id="test2" class="col s12">
@@ -88,57 +89,224 @@
                         <div class="row">
                             @using (Html.BeginForm("InsertClientBusiness", "ClientBusiness", FormMethod.Post))
                             {
-                            <div class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input autofocus placeholder="Nombre" name="business_name" type="text" class="validate">
-                                        <label for="first_name">Nombre de Empresa</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input name="nit_business" type="text" class="validate">
-                                        <label for="last_name">NIT</label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input name="quantEmployees" type="number" class="validate">
-                                        <label for="last_name">Numero de empleados</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <select name="cbxTypeBusiness">
-                                            <option value="" disabled selected>Tipo de Empresa</option>
-                                            @foreach (var item in listTypeBusiness)
-                                            {
-                                                <option value="@item.id_type_business">@item.type_business</option>
-                                            }
-                                        </select>
-                                        <label>Materialize Select</label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <select name="cbxCreditCard">
-                                            <option value="" disabled selected>Nombre de Tarjeta</option>
-                                            @foreach (var item in listCreditCard)
-                                            {
-                                                <option value="@item.id_credit_card">@item.name_card</option>
-                                            }
-                                        </select>
-                                        <label>Nombre de tarjeta</label>
-                                    </div>
-                                    <div class="input-field col s6">
+                                <div class="col s12">
+                                    <div class="row">
                                         <div class="input-field col s6">
-                                            <button class="btn waves-effect waves-light" type="submit" name="action">
-                                                Agregar Cliente
-                                                <i class="material-icons right">add</i>
-                                            </button>
+                                            <input autofocus placeholder="Nombre" name="business_name" type="text" class="validate">
+                                            <label for="first_name">Nombre de Empresa</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="nit_business" type="text" class="validate">
+                                            <label for="last_name">NIT</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input name="quantEmployees" type="number" class="validate">
+                                            <label for="last_name">Numero de empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <select name="cbxTypeBusiness">
+                                                <option value="" disabled selected>Tipo de Empresa</option>
+                                                @foreach (var item in listTypeBusiness)
+                                                {
+                                                    <option value="@item.id_type_business">@item.type_business</option>
+                                                }
+                                            </select>
+                                            <label>Materialize Select</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <select name="cbxCreditCard">
+                                                <option value="" disabled selected>Nombre de Tarjeta</option>
+                                                @foreach (var item in listCreditCard)
+                                                {
+                                                    <option value="@item.id_credit_card">@item.name_card</option>
+                                                }
+                                            </select>
+                                            <label>Nombre de tarjeta</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <div class="input-field col s6">
+                                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                                    Agregar Cliente
+                                                    <i class="material-icons right">add</i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             }
+                        </div>
+                    </div>
+
+                    <div id="test3" class="col s12">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <a href="#modal1" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">shopping_cart</i>Comercial</a>
+
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Contacto Comercial</h4><hr /><br />
+                                        <div class="row">
+                                            <div class="card col s12">
+                                                <br />
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input autofocus id="first_name" type="text" class="validate">
+                                                        <label for="first_name">Nombre</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">DPI</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Celular</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Teléfono Oficina</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Extensión</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="email" class="validate">
+                                                        <label for="first_name">Email</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="text" class="validate">
+                                                        <label for="first_name">Dirección Oficina</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect blue white-text btn-flat">Agregar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-field col s4">
+                                <a href="#modal2" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">attach_money</i>Financiero</a>
+
+                                <div id="modal2" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Contacto Financiero</h4><hr /><br />
+                                        <div class="row">
+                                            <div class="card col s12">
+                                                <br />
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input autofocus id="first_name" type="text" class="validate">
+                                                        <label for="first_name">Nombre</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">DPI</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Celular</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Teléfono Oficina</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Extensión</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="email" class="validate">
+                                                        <label for="first_name">Email</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="text" class="validate">
+                                                        <label for="first_name">Dirección Oficina</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect blue white-text btn-flat">Agregar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-field col s4">
+                                <a href="#modal3" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">important_devices</i>Administrador</a>
+
+                                <div id="modal3" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Contacto Administrador</h4><hr /><br />
+                                        <div class="row">
+                                            <div class="card col s12">
+                                                <br />
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input autofocus id="first_name" type="text" class="validate">
+                                                        <label for="first_name">Nombre</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">DPI</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Celular</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Teléfono Oficina</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="number" class="validate">
+                                                        <label for="first_name">Extensión</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="email" class="validate">
+                                                        <label for="first_name">Email</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                        <input id="first_name" type="text" class="validate">
+                                                        <label for="first_name">Dirección Oficina</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect blue white-text btn-flat">Agregar</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

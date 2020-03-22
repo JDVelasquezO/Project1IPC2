@@ -89,6 +89,11 @@
             });
         });
 
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+
     </script>
 </body>
 </html>
