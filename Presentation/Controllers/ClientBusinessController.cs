@@ -25,8 +25,7 @@ namespace Presentation.Controllers
         List<CreditCard_Entity> list_credit_card = new List<CreditCard_Entity>();
         CreditCard_Logic creditCard_Logic = new CreditCard_Logic();
 
-        /*List<Contact_Entity> list_contact = new List<Contact_Entity>();
-        Contact_Logic contact_Logic = new Contact_Logic();*/
+        List<ClientBusiness_Entity> list_clientBusiness = new List<ClientBusiness_Entity>();
 
         // GET: ClientBusiness
         public ActionResult ListClientBusiness()
@@ -81,6 +80,9 @@ namespace Presentation.Controllers
 
             list_credit_card = creditCard_Logic.listCreditCard();
             ViewBag.ListCreditCard = list_credit_card;
+
+            list_clientBusiness = clientBusiness_Logic.listClientBusiness();
+            ViewBag.ListClientBusiness = list_clientBusiness;
 
             return View();
         }

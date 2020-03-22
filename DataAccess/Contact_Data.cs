@@ -53,7 +53,7 @@ namespace DataAccess
                 p_extension.ParameterName = "@extension";
                 p_extension.SqlDbType = SqlDbType.VarChar;
                 p_extension.Size = 10;
-                p_extension.Value = contact.name_contact;
+                p_extension.Value = contact.extension;
 
                 SqlParameter p_emailContact = new SqlParameter();
                 p_emailContact.ParameterName = "@emailContact";
