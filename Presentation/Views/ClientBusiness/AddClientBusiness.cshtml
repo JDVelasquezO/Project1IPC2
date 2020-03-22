@@ -155,7 +155,7 @@
                         <div class="row">
 <div class="input-field col s4">
     <a href="#modal1" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">shopping_cart</i>Comercial</a>
-        @using (Html.BeginForm("AddContact", "Contact", FormMethod.Post))
+        @using (Html.BeginForm("AddComercialContact", "Contact", FormMethod.Post))
         {
         <div id="modal1" class="modal">
             <div class="modal-content">
@@ -224,114 +224,149 @@
     }
 </div>
 
-                            <div class="input-field col s4">
-                                <a href="#modal2" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">attach_money</i>Financiero</a>
+<div class="input-field col s4">
+    <a href="#modal2" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">attach_money</i>Finanzas</a>
+        @using (Html.BeginForm("addFinanceContact", "Contact", FormMethod.Post))
+        {
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h4>Contacto Comercial</h4><hr /><br />
+                <div class="row">
+                    <div class="card col s12"><br />
+                        <div class="row">
+                            
+                        <div class="input-field col s6">
+                            <select name="cbxClientBusiness">
+                                <option value="" disabled selected>Empresa a la que pertenece</option>
+                                @foreach (var item in listClientBusiness)
+                                {
+                                    <option value="@item.id_client_business">@item.name_client_business</option>
+                                }
+                            </select>
+                            <label>Nombre Empresa</label>
+                        </div>
 
-                                <div id="modal2" class="modal">
-                                    <div class="modal-content">
-                                        <h4>Contacto Financiero</h4><hr /><br />
-                                        <div class="row">
-                                            <div class="card col s12">
-                                                <br />
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input autofocus id="first_name" type="text" class="validate">
-                                                        <label for="first_name">Nombre</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">DPI</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">Celular</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">Teléfono Oficina</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">Extensión</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="email" class="validate">
-                                                        <label for="first_name">Email</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="text" class="validate">
-                                                        <label for="first_name">Dirección Oficina</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="#!" class="modal-close waves-effect blue white-text btn-flat">Agregar</a>
-                                    </div>
-                                </div>
+                            <div class="input-field col s12">
+                                <input name="name_contact" type="text" class="validate">
+                                <label for="first_name">Nombre</label>
                             </div>
-                            <div class="input-field col s4">
-                                <a href="#modal3" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">important_devices</i>Administrador</a>
 
-                                <div id="modal3" class="modal">
-                                    <div class="modal-content">
-                                        <h4>Contacto Administrador</h4><hr /><br />
-                                        <div class="row">
-                                            <div class="card col s12">
-                                                <br />
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input autofocus id="first_name" type="text" class="validate">
-                                                        <label for="first_name">Nombre</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">DPI</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">Celular</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">Teléfono Oficina</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="number" class="validate">
-                                                        <label for="first_name">Extensión</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="email" class="validate">
-                                                        <label for="first_name">Email</label>
-                                                    </div>
-
-                                                    <div class="input-field col s12">
-                                                        <input id="first_name" type="text" class="validate">
-                                                        <label for="first_name">Dirección Oficina</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="#!" class="modal-close waves-effect blue white-text btn-flat">Agregar</a>
-                                    </div>
-                                </div>
+                            <div class="input-field col s12">
+                                <input  name="dpi_contact" type="number" class="validate">
+                                <label for="first_name">DPI</label>
                             </div>
+
+                            <div class="input-field col s12">
+                                <input name="celphone_contact" type="number" class="validate">
+                                <label for="first_name">Celular</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="officephone_contact" type="number" class="validate">
+                                <label for="first_name">Teléfono Oficina</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="extension_contact" type="number" class="validate">
+                                <label for="first_name">Extensión</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="email_contact" type="email" class="validate">
+                                <label for="first_name">Email</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="address_contact" type="text" class="validate">
+                                <label for="first_name">Dirección Oficina</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            <div class="modal-footer">
+                <button class="modal-close waves-effect blue white-text btn-flat" type="submit" name="action">
+                    Agregar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="input-field col s4">
+    <a href="#modal3" class="waves-effect waves-light btn modal-trigger"><i class="material-icons right">devices</i>Admin. Servicios</a>
+        @using (Html.BeginForm("addAdminServicesContact", "Contact", FormMethod.Post))
+        {
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h4>Contacto Comercial</h4><hr /><br />
+                <div class="row">
+                    <div class="card col s12"><br />
+                        <div class="row">
+                            
+                        <div class="input-field col s6">
+                            <select name="cbxClientBusiness">
+                                <option value="" disabled selected>Empresa a la que pertenece</option>
+                                @foreach (var item in listClientBusiness)
+                                {
+                                    <option value="@item.id_client_business">@item.name_client_business</option>
+                                }
+                            </select>
+                            <label>Nombre Empresa</label>
+                        </div>
+
+                            <div class="input-field col s12">
+                                <input name="name_contact" type="text" class="validate">
+                                <label for="first_name">Nombre</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input  name="dpi_contact" type="number" class="validate">
+                                <label for="first_name">DPI</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="celphone_contact" type="number" class="validate">
+                                <label for="first_name">Celular</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="officephone_contact" type="number" class="validate">
+                                <label for="first_name">Teléfono Oficina</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="extension_contact" type="number" class="validate">
+                                <label for="first_name">Extensión</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="email_contact" type="email" class="validate">
+                                <label for="first_name">Email</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input name="address_contact" type="text" class="validate">
+                                <label for="first_name">Dirección Oficina</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            <div class="modal-footer">
+                <button class="modal-close waves-effect blue white-text btn-flat" type="submit" name="action">
+                    Agregar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+
                         </div>
                     </div>
                 </div>

@@ -98,10 +98,20 @@ namespace DataAccess
             return this.functionForAddContact("add_comercial_contact", contact);
         }
 
-        public Contact_Entity searchContact(int id)
+        public bool addFinanceContact(Contact_Entity contact)
+        {
+            return this.functionForAddContact("add_finance_contact", contact);
+        }
+
+        public bool addAdminServicesContact(Contact_Entity contact)
+        {
+            return this.functionForAddContact("add_adminService_contact", contact);
+        }
+
+        public Contact_Entity searchComercialContact(int id)
         {
             Contact_Entity contact = new Contact_Entity();
-
+        
             try
             {
                 sqlConnection.Open();
