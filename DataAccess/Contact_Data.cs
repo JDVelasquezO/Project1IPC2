@@ -260,7 +260,7 @@ namespace DataAccess
                 id_parameter.ParameterName = "@idContact";
                 id_parameter.SqlDbType = SqlDbType.Int;
                 id_parameter.Value = id;
-
+            
                 sqlCommand.Parameters.Add(id_parameter);
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -316,7 +316,7 @@ namespace DataAccess
                     contact.email = sqlDataReader["Email Contacto"].ToString();
                     contact.password = sqlDataReader["Password"].ToString();
                     contact.extension = sqlDataReader["Ext Contacto"].ToString();
-                    contact.typeContact.type_contact = sqlDataReader["Tipo Contacto"].ToString();
+                    contact.typeContact.id_typecontact = Convert.ToInt32(sqlDataReader["Tipo Contacto"]);
                     contact.client_business.id_client_business = Convert.ToInt32(sqlDataReader["Identificador Cliente"].ToString());
                     contact.client_business.name_client_business = sqlDataReader["Nombre Cliente"].ToString();
 

@@ -30,7 +30,37 @@ namespace Presentation.Controllers
 
         public ActionResult HomeContact()
         {
-            if (Session["contact"] == null)
+            if (Session["adminContact"] == null)
+            {
+                return Content("<script>" +
+                                    "alert('Sesion Expirada'); " +
+                                    "window.location.href='/Auth/Login' " +
+                                "</script>");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult ComercialContact()
+        {
+            if (Session["comercialContact"] == null)
+            {
+                return Content("<script>" +
+                                    "alert('Sesion Expirada'); " +
+                                    "window.location.href='/Auth/Login' " +
+                                "</script>");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult FinanceContact()
+        {
+            if (Session["financeContact"] == null)
             {
                 return Content("<script>" +
                                     "alert('Sesion Expirada'); " +

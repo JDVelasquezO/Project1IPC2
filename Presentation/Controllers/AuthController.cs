@@ -25,6 +25,7 @@ namespace Presentation.Controllers
             string passContact = "";
 
             int idContact = 0;
+            int idRol = 0;
 
             foreach (var item in contact_Logic.returnCredentials())
             {
@@ -34,6 +35,7 @@ namespace Presentation.Controllers
                 if (email == emailContact && pass == passContact)
                 {
                     idContact = item.id_contact;
+                    idRol = item.typeContact.id_typecontact;
                     break;
                 }
             }
@@ -48,11 +50,30 @@ namespace Presentation.Controllers
             }
             else if (email == emailContact && pass == passContact)
             {
-                script = "<script languaje='javascript'>" +
-                            "window.location.href='/Index/HomeContact'; " +
-                         "</script>";
+                if (idRol == 1)
+                {
+                    Session["comercialContact"] = idContact;
 
-                Session["contact"] = idContact;
+                    script = "<script languaje='javascript'>" +
+                                "window.location.href='/Index/ComercialContact'; " +
+                             "</script>";
+                }
+                else if (idRol == 2)
+                {
+                    Session["financeContact"] = idContact;
+
+                    script = "<script languaje='javascript'>" +
+                                "window.location.href='/Index/FinanceContact'; " +
+                             "</script>";
+                }
+                else if (idRol == 3)
+                {
+                    Session["adminContact"] = idContact;
+
+                    script = "<script languaje='javascript'>" +
+                                "window.location.href='/Index/HomeContact'; " +
+                             "</script>";
+                }
             }
             else
             {
