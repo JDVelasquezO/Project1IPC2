@@ -108,37 +108,9 @@ namespace Presentation.Controllers
             return this.functionForAddContact(contact_Logic.addAdminServicesContact(contact));
         }
 
-        [HttpPost]
-        public ActionResult SendMail()
+        public ActionResult SearchComercialContact(int id)
         {
-            try
-            {
-                //Configuración del Mensaje
-                MailMessage mail = new MailMessage();
-                //Especificamos el correo desde el que se enviará el Email y el nombre de la persona que lo envía
-                mail.From = new MailAddress("jdvela158@gmail.com", "ERP", Encoding.UTF8);
-            
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                //Aquí ponemos el asunto del correo
-                mail.Subject = "Prueba de Envío de Correo";
-                //Aquí ponemos el mensaje que incluirá el correo
-                mail.Body = "Prueba de Envío de Correo de Gmail desde CSharp";
-                //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
-                mail.To.Add("Kgabyortiz1@gmail.com");
-
-                //Configuracion del SMTP
-                SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
-                //Especificamos las credenciales con las que enviaremos el mail
-                SmtpServer.Credentials = new System.Net.NetworkCredential("jdvela158@gmail.com", "DiosesAmor123");
-                SmtpServer.EnableSsl = true;
-                SmtpServer.Host = "smptp.gmail.com";
-                SmtpServer.Send(mail);
-                return Content("<script>alert('Se envio el email')</script>");
-            }
-            catch (Exception ex)
-            {
-                return Content("<script>alert('No se envio el email')</script>");
-            }
+            return PartialView(contact_Logic.searchComercialContact(id));
         }
     }
 }

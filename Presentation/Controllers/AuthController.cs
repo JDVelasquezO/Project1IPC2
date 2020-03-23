@@ -23,6 +23,7 @@ namespace Presentation.Controllers
             var script = "";
             string emailContact = "";
             string passContact = "";
+
             int idContact = 0;
 
             foreach (var item in contact_Logic.returnCredentials())
@@ -44,12 +45,11 @@ namespace Presentation.Controllers
                          "</script>";
 
                 Session["user"] = email;
-
             }
             else if (email == emailContact && pass == passContact)
             {
                 script = "<script languaje='javascript'>" +
-                             "window.location.href='/Index/HomeContact'; " +
+                            "window.location.href='/Index/HomeContact'; " +
                          "</script>";
 
                 Session["contact"] = idContact;

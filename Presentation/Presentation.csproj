@@ -117,6 +117,7 @@
     <Content Include="Views\ClientBusiness\InfoContact.cshtml" />
     <Content Include="Views\Index\HomeContact.cshtml" />
     <Content Include="Views\Layouts\_LayoutContact.cshtml" />
+    <Content Include="Views\Contact\searchComercialContact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,7 +129,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Public\" />
-    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">

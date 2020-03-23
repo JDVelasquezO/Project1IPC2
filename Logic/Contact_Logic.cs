@@ -19,6 +19,11 @@ namespace Logic
             return contact_Data.searchContact(id);
         }*/
 
+        public Contact_Entity searchComercialContact(int id)
+        {
+            return contact_Data.searchComercialContact(id);
+        }
+
         public bool addComercialContact(Contact_Entity contact)
         {
             return contact_Data.addComercialContact(contact);
