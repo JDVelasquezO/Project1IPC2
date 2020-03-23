@@ -18,5 +18,6 @@ namespace Entity
         public string address_office { get; set; }
         public TypeContact_Entity typeContact = new TypeContact_Entity();
         public ClientBusiness_Entity client_business = new ClientBusiness_Entity();
+        public AdminServices_Entity adminServices = new AdminServices_Entity();
     }
 }
