@@ -246,7 +246,7 @@ namespace DataAccess
             return response;
         }
 
-        public Contact_Entity searchComercialContact(int id)
+        public Contact_Entity searchContact(int id)
         {
             Contact_Entity contact = new Contact_Entity();
         
@@ -331,6 +331,42 @@ namespace DataAccess
             }
 
             return list;
+        }
+
+        public bool updatePassword (Contact_Entity contact)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("update_pass_contact", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idContact";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = contact.id_contact;
+
+                SqlParameter p_password = new SqlParameter();
+                p_password.ParameterName = "@Password";
+                p_password.SqlDbType = SqlDbType.VarChar;
+                p_password.Size = 20;
+                p_password.Value = contact.password;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                sqlCommand.Parameters.Add(p_password);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
         }
     }
 }

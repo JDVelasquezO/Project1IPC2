@@ -14,14 +14,14 @@ namespace Logic
     {
         Contact_Data contact_Data = new Contact_Data();
 
-        /*public Contact_Entity searchClientBusiness(int id)
+        public bool updatePassword(Contact_Entity contact)
+        {
+            return contact_Data.updatePassword(contact);
+        }
+
+        public Contact_Entity searchContact(int id)
         {
             return contact_Data.searchContact(id);
-        }*/
-
-        public Contact_Entity searchComercialContact(int id)
-        {
-            return contact_Data.searchComercialContact(id);
         }
 
         public bool addComercialContact(Contact_Entity contact)

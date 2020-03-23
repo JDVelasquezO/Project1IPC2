@@ -120,6 +120,7 @@
     <Content Include="Views\Contact\searchComercialContact.cshtml" />
     <Content Include="Views\Index\ComercialContact.cshtml" />
     <Content Include="Views\Index\FinanceContact.cshtml" />
+    <Content Include="Views\Contact\ChanguePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

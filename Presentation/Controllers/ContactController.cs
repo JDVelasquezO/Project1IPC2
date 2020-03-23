@@ -110,7 +110,42 @@ namespace Presentation.Controllers
 
         public ActionResult SearchComercialContact(int id)
         {
-            return PartialView(contact_Logic.searchComercialContact(id));
+            return PartialView(contact_Logic.searchContact(id));
+        }
+
+        public ActionResult ChanguePassword(int id)
+        {
+            return View(contact_Logic.searchContact(id));
+        }
+
+        public ActionResult UpdatePassword (String password, String password2)
+        {
+            Contact_Entity contact = new Contact_Entity();
+            contact.id_contact = Convert.ToInt32(Session["adminContact"]);
+
+            string script = "";
+
+            if (password.Equals(password2))
+            {
+                contact.password = password;
+
+                if (contact_Logic.updatePassword(contact))
+                {
+                    script = "<script>" +
+                                "alert('Las contraseña se actualizo. Debes iniciar Sesión');" +
+                                "window.location.href = '/Auth/Login'; " +
+                             "</script>";
+                }
+            }
+            else
+            {
+                script = "<script>" +
+                            "alert('Las contraseñas no coinciden');" +
+                            "window.location.href = '/Index/HomeContact'; " +
+                         "</script>";
+            }
+
+            return Content(script);
         }
     }
 }

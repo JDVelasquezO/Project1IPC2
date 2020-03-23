@@ -8,10 +8,7 @@
 }
 
 <main class="container">
-    <h3>Bienvenido @idContact</h3>
-    <a href="#">Cambiar Password</a>
-</main>
-
 @{ 
     Html.RenderAction("SearchComercialContact", "Contact", new { id = idContact });
 }
+</main>
