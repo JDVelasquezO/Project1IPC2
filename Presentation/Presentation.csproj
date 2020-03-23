@@ -115,6 +115,8 @@
     <Content Include="Views\ClientBusiness\EditClientBusiness.cshtml" />
     <Content Include="Views\ClientBusiness\AddClientBusiness.cshtml" />
     <Content Include="Views\ClientBusiness\InfoContact.cshtml" />
+    <Content Include="Views\Index\HomeContact.cshtml" />
+    <Content Include="Views\Layouts\_LayoutContact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

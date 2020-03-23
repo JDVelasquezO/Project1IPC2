@@ -1,0 +1,12 @@
+﻿@model Entity.Contact_Entity
+
+@{
+    ViewBag.Title = "HomeContact";
+    Layout = "~/Views/Layouts/_LayoutContact.cshtml";
+
+    int idContact = Convert.ToInt32(Session["contact"]);
+}
+
+<main class="container">
+    <h3>Bienvenido @idContact</h3>
+</main>

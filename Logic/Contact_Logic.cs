@@ -29,9 +29,24 @@ namespace Logic
             return contact_Data.addFinanceContact(contact);
         }
 
+        public int returnIdAdminServices()
+        {
+            return contact_Data.returnIdAdminServices();
+        }
+
+        public bool addAdminServices(AdminServices_Entity adminServices)
+        {
+            return contact_Data.addAdminServices(adminServices);
+        }
+
         public bool addAdminServicesContact(Contact_Entity contact)
         {
             return contact_Data.addAdminServicesContact(contact);
+        }
+
+        public List<Contact_Entity> returnCredentials()
+        {
+            return contact_Data.returnCredentials();
         }
     }
 }

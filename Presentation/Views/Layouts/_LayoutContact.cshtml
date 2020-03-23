@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet"
+          href="~/Public/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .btn {
+            margin-top: 5%;
+            box-shadow: none;
+        }
+
+        .tabs .tab a {
+            color: #1BA1E2;
+        }
+            /*Black color to the text*/
+
+            .tabs .tab a:hover {
+                background-color: #eee;
+                color: #1BA1E2;
+            }
+            /*Text color on hover*/
+
+            .tabs .tab a.active {
+                background-color: #fff;
+                color: #1EB0F7;
+            }
+        /*Background and text color when a tab is active*/
+
+        .tabs .indicator {
+            background-color: #1EB0F7;
+        }
+        /*Color of underline*/
+    </style>
+</head>
+<body class="grey lighten-4">
+    <header class="light-blue darken-1 white-text">
+        <div class="row">
+            <h2 class="title col s6">ERP</h2>
+
+            <div class="right-align auth_button col s6">
+                <a href="/login.html" class="light-blue btn">Módulos</a>
+                <a href="/login.html" class="light-blue btn">Blog</a>
+                <a href="/login.html" class="light-blue btn">Perfil</a>
+                <a href="/Auth/Logout" class="light-blue btn">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer class="page-footer light-blue darken-1">
+        <div class="container">
+            <div class="row">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Public/js/materialize.min.js"></script>
+</body>
+</html>

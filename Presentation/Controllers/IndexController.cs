@@ -27,5 +27,20 @@ namespace Presentation.Controllers
                 return View();
             }
         }
+
+        public ActionResult HomeContact()
+        {
+            if (Session["contact"] == null)
+            {
+                return Content("<script>" +
+                                    "alert('Sesion Expirada'); " +
+                                    "window.location.href='/Auth/Login' " +
+                                "</script>");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
