@@ -45,11 +45,13 @@
     <Compile Include="ClientBusiness_Entity.cs" />
     <Compile Include="Contact_Entity.cs" />
     <Compile Include="CreditCard_Entity.cs" />
+    <Compile Include="Module_Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SizeBusiness_Entity.cs" />
     <Compile Include="TypeBusiness_Entity.cs" />
     <Compile Include="TypeCard_Entity.cs" />
     <Compile Include="TypeContact_Entity.cs" />
+    <Compile Include="TypeModule_Entity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

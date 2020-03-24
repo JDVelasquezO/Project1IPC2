@@ -98,6 +98,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,6 +122,7 @@
     <Content Include="Views\Index\ComercialContact.cshtml" />
     <Content Include="Views\Index\FinanceContact.cshtml" />
     <Content Include="Views\Contact\ChanguePassword.cshtml" />
+    <Content Include="Views\Module\ListModule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

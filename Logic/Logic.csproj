@@ -45,6 +45,7 @@
     <Compile Include="ClientBusiness_Logic.cs" />
     <Compile Include="Contact_Logic.cs" />
     <Compile Include="CreditCard_Logic.cs" />
+    <Compile Include="Module_Logic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SizeBusiness_Logic.cs" />
     <Compile Include="TypeBusiness_Logic.cs" />

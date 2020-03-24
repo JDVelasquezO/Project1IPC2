@@ -53,9 +53,35 @@
                             </div>
                         </div>
                     </div>
-                    <div id="test2" class="col s12">Test 2</div>
-                </div>
 
+                    <div id="test2" class="col s12">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="card">
+
+                                    @{
+                                        Html.RenderAction("ListModule", "Module");
+                                    }
+
+                                    <div class="card-action">
+                                        <a href="#">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m6">
+                                <div class="card">
+                                    <div class="card-content black-text">
+                                        <h4>Agregar nuevo cliente</h4>
+                                        <a href="/ClientBusiness/AddClientBusiness" class="btn-floating btn-large waves-effect waves-light red">
+                                            <i class="material-icons">add</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
