@@ -15,5 +15,10 @@ namespace Presentation.Controllers
         {
             return PartialView(module_Logic.listModule());
         }
+
+        public ActionResult EditModules(int id)
+        {
+            return View(module_Logic.searchModule(id));
+        }
     }
 }

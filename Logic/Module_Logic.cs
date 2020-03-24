@@ -16,5 +16,10 @@ namespace Logic
         {
             return module_Data.listModule();
         }
+
+        public Module_Entity searchModule(int id)
+        {
+            return module_Data.searchModule(id);
+        }
     }
 }

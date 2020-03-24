@@ -123,6 +123,7 @@
     <Content Include="Views\Index\FinanceContact.cshtml" />
     <Content Include="Views\Contact\ChanguePassword.cshtml" />
     <Content Include="Views\Module\ListModule.cshtml" />
+    <Content Include="Views\Module\EditModules.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
