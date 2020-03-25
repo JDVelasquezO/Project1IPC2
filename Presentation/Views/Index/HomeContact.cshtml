@@ -8,7 +8,15 @@
 }
 
 <main class="container">
-@{ 
-    Html.RenderAction("SearchComercialContact", "Contact", new { id = idContact });
-}
+    @{
+        Html.RenderAction("SearchComercialContact", "Contact", new { id = idContact });
+
+    }
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+</script>

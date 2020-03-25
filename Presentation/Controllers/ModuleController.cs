@@ -45,5 +45,10 @@ namespace Presentation.Controllers
 
             return Content(script);
         }
+
+        public ActionResult SearchModuleOfContact(int id)
+        {
+            return PartialView(module_Logic.listModuleOfContact(id));
+        }
     }
 }

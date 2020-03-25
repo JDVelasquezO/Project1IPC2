@@ -1,0 +1,22 @@
+﻿@model List<Entity.Module_Entity>
+
+<ul class="collapsible">
+    @foreach (var item in Model)
+    {
+        if (item.status_mode)
+        {
+            <li>
+                <div class="collapsible-header"><i class="material-icons blue-text">web_asset</i>@item.name_module</div>
+                <div class="collapsible-body"><span>@item.desc_module</span></div>
+            </li>
+        }
+        else
+        {
+            <li>
+                <div class="collapsible-header"><i class="material-icons red-text">block</i>
+                    @item.name_module es un modulo no disponible
+                </div>
+            </li>
+        }
+    }
+</ul>

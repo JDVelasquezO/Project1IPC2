@@ -26,5 +26,10 @@ namespace Logic
         {
             return module_Data.changueStatusModule(module);
         }
+
+        public List<Module_Entity> listModuleOfContact(int id)
+        {
+            return module_Data.listModuleOfContact(id);
+        }
     }
 }

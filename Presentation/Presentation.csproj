@@ -124,6 +124,7 @@
     <Content Include="Views\Contact\ChanguePassword.cshtml" />
     <Content Include="Views\Module\ListModule.cshtml" />
     <Content Include="Views\Module\EditModules.cshtml" />
+    <Content Include="Views\Module\SearchModuleOfContact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

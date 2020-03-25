@@ -125,5 +125,47 @@ namespace DataAccess
 
             return response;
         }
+
+        public List<Module_Entity> listModuleOfContact(int id)
+        {
+            List<Module_Entity> list = new List<Module_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("search_module_contact", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idModule";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = id;
+
+                sqlCommand.Parameters.Add(id_parameter);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Module_Entity module = new Module_Entity();
+                    module.id_module = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    module.name_module = sqlDataReader["Nombre Modulo"].ToString();
+                    module.abb_module = sqlDataReader["Abreviacion"].ToString();
+                    module.desc_module = sqlDataReader["Descripcion"].ToString();
+                    module.is_default = Convert.ToBoolean(sqlDataReader["Es default"]);
+                    module.status_mode = Convert.ToBoolean(sqlDataReader["Estado"]);
+                    module.clientBusiness.name_client_business = sqlDataReader["Nombre Cliente"].ToString();
+                    module.typeModule.type_module = sqlDataReader["Tipo Modulo"].ToString();
+
+                    list.Add(module);
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }
