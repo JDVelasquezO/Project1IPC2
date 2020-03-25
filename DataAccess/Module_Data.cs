@@ -81,6 +81,7 @@ namespace DataAccess
                     module.clientBusiness.name_client_business = sqlDataReader["Nombre Cliente"].ToString();
                     module.typeModule.type_module = sqlDataReader["Tipo Modulo"].ToString();
                 }
+
             }
             catch (Exception e)
             {
@@ -88,6 +89,41 @@ namespace DataAccess
             }
 
             return module;
+        }
+
+        public bool changueStatusModule(Module_Entity module)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("change_status_module", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idModule";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = module.id_module;
+
+                SqlParameter p_status = new SqlParameter();
+                p_status.ParameterName = "@statusModule";
+                p_status.SqlDbType = SqlDbType.Bit;
+                p_status.Value = module.status_mode;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                sqlCommand.Parameters.Add(p_status);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
         }
     }
 }

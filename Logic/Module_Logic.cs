@@ -21,5 +21,10 @@ namespace Logic
         {
             return module_Data.searchModule(id);
         }
+
+        public bool changueStatusModule(Module_Entity module)
+        {
+            return module_Data.changueStatusModule(module);
+        }
     }
 }
