@@ -10,7 +10,7 @@
         <div class="col s12">
             &nbsp;&nbsp;
             <a href="/Index/Home" class="breadcrumb">Home</a>
-            <a href="#" class="breadcrumb">Clientes</a>
+            <a href="/Subscription/ListSubscriptions" class="breadcrumb">Modulos</a>
         </div>
     </div>
 </nav>
@@ -32,6 +32,8 @@
                         new { id = Model.id_module, status = Model.status_mode })
                     }
                 }
+                |
+                <a href="/Subscription/ListSubscriptions">Suscripciones</a>
 
                 <span class="card-title">Cliente @Model.name_module</span>
                 <table class="responsive-table">
