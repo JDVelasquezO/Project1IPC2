@@ -1,0 +1,58 @@
+﻿@model List<Entity.Subscription_Entity>
+
+@{
+    ViewBag.Title = "SearchSubscription";
+    Layout = "~/Views/Layouts/_LayoutContact.cshtml";
+}
+
+<div class="row container">
+
+    <nav>
+        <div class="nav-wrapper blue">
+            <div class="col s12">
+                &nbsp;&nbsp;
+                <a href="/Index/HomeContact" class="breadcrumb">Home</a>
+                <a href="" class="breadcrumb">Suscripciones</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Mis suscripciones</span>
+                <p>
+                    <table class="striped centered">
+                        <thead>
+                            <tr>
+                                <th>Identificador</th>
+                                <th>Tipo de Modulo</th>
+                                <th>Tipo de Suscripción</th>
+                                <th>Fecha Inicial</th>
+                                <th>Fecha Final</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.id_subscription</td>
+                                    <td>@item.typeModule.type_module</td>
+                                    <td>@item.typeSubscription.type_subscription</td>
+                                    <td>@item.typeSubscription.init_date</td>
+                                    <td>@item.typeSubscription.finish_date</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,25 +1,41 @@
 ﻿@model Entity.Contact_Entity
 
-<h4>Bienvenido @Model.name_contact</h4>
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Algunas Opciones</a>
-<!-- Dropdown Structure -->
-<ul id='dropdown1' class='dropdown-content'>
-    <li>
-        <a>
-            <i class="material-icons">https</i>
-            @Html.ActionLink("Cambiar Contraseña", "ChanguePassword", new { id = Model.id_contact })
-        </a>
-    </li>
-    <li>
-        <a href=""><i class="material-icons">subscriptions</i>
-        Ver suscripcion</a>
-    </li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-</ul>
+<div class="row">
+    <div class="col s6">
+        <h4>Bienvenido @Model.name_contact</h4>
+    </div>
+
+    <div class="col s6">
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Algunas Opciones</a><br /><br />
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li>
+                <a>
+                    <i class="material-icons">https</i>
+                    @Html.ActionLink("Cambiar Contraseña", "ChanguePassword", new { id = Model.id_contact })
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="material-icons">subscriptions</i>
+                    @Html.ActionLink("Ver Suscripciones", "SearchSubscription", new { id = Model.client_business.id_client_business })
+                </a>
+            </li>
+            <li class="divider" tabindex="-1"></li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
+    <nav>
+        <div class="nav-wrapper blue">
+            <div class="col s12">
+                &nbsp;&nbsp;
+                <a href="#" class="breadcrumb">Home</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="col s12">
         <div class="card">
             <div class="card-content">

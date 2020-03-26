@@ -16,6 +16,7 @@ namespace Presentation.Controllers
     public class ContactController : Controller
     {
         Contact_Logic contact_Logic = new Contact_Logic();
+        Subscription_Logic subscription = new Subscription_Logic();
 
         public ActionResult functionForAddContact(bool condition)
         {
@@ -146,6 +147,11 @@ namespace Presentation.Controllers
             }
 
             return Content(script);
+        }
+
+        public ActionResult SearchSubscription(int id)
+        {
+            return View(subscription.searchSubscription(id));
         }
     }
 }
