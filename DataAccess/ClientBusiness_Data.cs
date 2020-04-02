@@ -180,7 +180,7 @@ namespace DataAccess
             try
             {
                 sqlConnection.Open();
-                sqlCommand = new SqlCommand("search_contact", sqlConnection);
+                sqlCommand = new SqlCommand("search_contacts", sqlConnection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter id_parameter = new SqlParameter();
