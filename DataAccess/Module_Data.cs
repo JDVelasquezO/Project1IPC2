@@ -36,7 +36,6 @@ namespace DataAccess
                     module.desc_module = sqlDataReader["Descripcion"].ToString();
                     module.is_default = Convert.ToBoolean(sqlDataReader["Es default"]);
                     module.status_mode = Convert.ToBoolean(sqlDataReader["Estado"]);
-                    module.clientBusiness.id_client_business = Convert.ToInt32(sqlDataReader["ID Cliente"]);
                     module.typeModule.id_type_module = Convert.ToInt32(sqlDataReader["ID Tipo Modulo"]);
 
                     list.Add(module);
