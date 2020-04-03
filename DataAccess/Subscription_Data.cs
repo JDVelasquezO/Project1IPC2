@@ -31,14 +31,8 @@ namespace DataAccess
                 {
                     Subscription_Entity subscription = new Subscription_Entity();
                     subscription.id_subscription = Convert.ToInt32(sqlDataReader["Identificador"]);
-                    subscription.typeModule.type_module = sqlDataReader["Tipo Modulo"].ToString();
-                    subscription.typeSubscription.type_subscription = sqlDataReader["Tipo Suscripcion"].ToString();
-                    subscription.typeSubscription.init_date = sqlDataReader["Fecha Inicial"].ToString();
-                    subscription.typeSubscription.finish_date = sqlDataReader["Fecha Final"].ToString();
-                    subscription.clientBusiness.name_client_business = sqlDataReader["Cliente"].ToString();
-                    subscription.typeModule.id_type_module = Convert.ToInt32(sqlDataReader["ID Tipo Modulo"]);
-                    subscription.typeSubscription.id_type_subscription = Convert.ToInt32(sqlDataReader["ID Tipo Suscription"]);
-                    subscription.clientBusiness.id_client_business = Convert.ToInt32(sqlDataReader["ID Cliente"]);
+                    subscription.clientBusiness.name_client_business = sqlDataReader["Nombre Cliente"].ToString();
+                    subscription.type_subscription = sqlDataReader["Tipo Suscripcion"].ToString();
 
                     list.Add(subscription);
                 }
@@ -74,7 +68,7 @@ namespace DataAccess
                 {
                     Subscription_Entity subscription = new Subscription_Entity();
                     subscription.id_subscription = Convert.ToInt32(sqlDataReader["Identificador"]);
-                    subscription.typeModule.type_module = sqlDataReader["Tipo Modulo"].ToString();
+                    /*subscription.typeModule.type_module = sqlDataReader["Tipo Modulo"].ToString();
                     subscription.typeSubscription.type_subscription = sqlDataReader["Tipo Suscripcion"].ToString();
                     subscription.typeSubscription.init_date = sqlDataReader["Fecha Inicial"].ToString();
                     subscription.typeSubscription.finish_date = sqlDataReader["Fecha Final"].ToString();
@@ -83,7 +77,7 @@ namespace DataAccess
                     subscription.typeSubscription.id_type_subscription = Convert.ToInt32(sqlDataReader["ID Tipo Suscription"]);
                     subscription.clientBusiness.id_client_business = Convert.ToInt32(sqlDataReader["ID Cliente"]);
 
-                    list.Add(subscription);
+                    list.Add(subscription);*/
                 }
             }
             catch (Exception e)

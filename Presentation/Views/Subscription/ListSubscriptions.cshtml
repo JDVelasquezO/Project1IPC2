@@ -23,12 +23,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Identificador</th>
-                            <th>Tipo de Modulo</th>
+                            <th>Nombre de Empresa</th>
                             <th>Tipo de Suscripción</th>
-                            <th>Fecha Inicial</th>
-                            <th>Fecha Final</th>
-                            <th>Cliente - Empresa</th>
                         </tr>
                     </thead>
 
@@ -36,12 +32,8 @@
                         @foreach (var item in Model)
                         {
                         <tr>
-                            <td>@item.id_subscription</td>
-                            <td>@item.typeModule.type_module</td>
-                            <td>@item.typeSubscription.type_subscription</td>
-                            <td>@item.typeSubscription.init_date</td>
-                            <td>@item.typeSubscription.finish_date</td>
                             <td>@item.clientBusiness.name_client_business</td>
+                            <td>@item.type_subscription</td>
                         </tr>
                         }
                     </tbody>

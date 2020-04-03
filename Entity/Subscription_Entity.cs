@@ -9,8 +9,9 @@ namespace Entity
     public class Subscription_Entity
     {
         public int id_subscription { get; set; }
-        public TypeModule_Entity typeModule = new TypeModule_Entity();
-        public TypeSubscription_Entity typeSubscription = new TypeSubscription_Entity();
+        public string type_subscription { get; set; }
+        public string init_date { get; set; }
+        public string finish_date { get; set; }
         public ClientBusiness_Entity clientBusiness = new ClientBusiness_Entity();
     }
 }
