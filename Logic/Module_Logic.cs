@@ -12,6 +12,11 @@ namespace Logic
     {
         Module_Data module_Data = new Module_Data();
 
+        public List<TypeModule_Entity> listTypeModule()
+        {
+            return module_Data.listTypeModule();
+        }
+
         public List<Module_Entity> listModule()
         {
             return module_Data.listModule();

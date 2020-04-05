@@ -128,6 +128,7 @@
     <Content Include="Views\Module\SearchModuleOfContact.cshtml" />
     <Content Include="Views\Subscription\ListSubscriptions.cshtml" />
     <Content Include="Views\Contact\SearchSubscription.cshtml" />
+    <Content Include="Views\Module\AddModules.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

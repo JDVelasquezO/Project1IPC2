@@ -12,6 +12,8 @@ namespace Presentation.Controllers
     {
         Module_Logic module_Logic = new Module_Logic();
 
+        List<TypeModule_Entity> list_type_business = new List<TypeModule_Entity>();
+
         public ActionResult ListModule()
         {
             return PartialView(module_Logic.listModule());
@@ -49,6 +51,14 @@ namespace Presentation.Controllers
         public ActionResult SearchModuleOfContact(int id)
         {
             return PartialView(module_Logic.listModuleOfContact(id));
+        }
+
+        public ActionResult AddModules()
+        {
+            list_type_business = module_Logic.listTypeModule();
+            ViewBag.list_type_business = list_type_business;
+
+            return View();
         }
     }
 }

@@ -15,6 +15,35 @@ namespace DataAccess
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
 
+        public List<TypeModule_Entity> listTypeModule()
+        {
+            List<TypeModule_Entity> list = new List<TypeModule_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("list_type_module", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    TypeModule_Entity type = new TypeModule_Entity();
+                    type.id_type_module = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    type.type_module = sqlDataReader["Tipo"].ToString();
+
+                    list.Add(type);
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
+
         public List<Module_Entity> listModule()
         {
             List<Module_Entity> list = new List<Module_Entity>();
