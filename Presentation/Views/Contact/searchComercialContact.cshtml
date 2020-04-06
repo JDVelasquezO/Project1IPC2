@@ -21,6 +21,12 @@
                     @Html.ActionLink("Ver Suscripciones", "SearchSubscription", new { id = Model.client_business.id_client_business })
                 </a>
             </li>
+            <li>
+                <a>
+                    <i class="material-icons">accessibility</i>
+                    @Html.ActionLink("Ver operadores", "SearchOperative", new { id = Model.client_business.id_client_business })
+                </a>
+            </li>
             <li class="divider" tabindex="-1"></li>
         </ul>
     </div>
@@ -40,10 +46,7 @@
         <div class="card">
             <div class="card-content">
                 <span class="card-title">Modulos Disponibles</span>
-                @{
-                    Html.RenderAction("SearchModuleOfContact", "Module",
-                        new { id = Model.client_business.id_client_business });
-                }
+                <!--Codigo-->
             </div>
             <div class="card-action">
                 <a href="#">This is a link</a>

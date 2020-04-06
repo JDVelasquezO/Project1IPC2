@@ -13,7 +13,7 @@
                 <div class="card-content">
                     <span class="card-title">Crear Modulo</span><br />
                     <div class="row">
-                        @using(Html.BeginForm("InsertModule", "Module", FormMethod.Post))
+                        @using (Html.BeginForm("InsertModule", "Module", FormMethod.Post))
                         {
                             <div class="col s12">
                                 <div class="row">
@@ -43,16 +43,117 @@
                                         <label>Tipo de Empresa</label>
                                     </div>
                                 </div>
-
                                 <button class="btn waves-effect waves-light" type="submit" name="action">
-                                    Agregar
+                                    Registrar
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
                         }
+                    </div>
+
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
+                        Agregar Lista de Precios
+                    </a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Lista de Precios</h4>
+                            <p>Suscripciones mensuales y anuales</p>
+
+                            <div class="row">
+                                <div class="col s12">
+                                    <ul class="tabs">
+                                        <li class="tab col s6"><a class="active" href="#test1">Suscripcion Mensual</a></li>
+                                        <li class="tab col s6"><a href="#test2">Suscripción anual</a></li>
+                                    </ul>
+                                </div>
+                                <br /><br />
+                                <div id="test1" class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">1 a 10 empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">11 a 15 empleados</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">16 a 25 empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">25 a 40 empleados</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">41 a 50 empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">Más de 50 empleados</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="test2" class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">1 a 10 empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">11 a 15 empleados</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">16 a 25 empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">25 a 40 empleados</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">41 a 50 empleados</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="number" class="validate">
+                                            <label for="first_name">Más de 50 empleados</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
+</script>

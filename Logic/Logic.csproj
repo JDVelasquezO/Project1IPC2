@@ -51,6 +51,7 @@
     <Compile Include="Subscription_Logic.cs" />
     <Compile Include="TypeBusiness_Logic.cs" />
     <Compile Include="TypeCard_Logic.cs" />
+    <Compile Include="UserOperative_Logic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">

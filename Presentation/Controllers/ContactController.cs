@@ -17,6 +17,7 @@ namespace Presentation.Controllers
     {
         Contact_Logic contact_Logic = new Contact_Logic();
         Subscription_Logic subscription = new Subscription_Logic();
+        UserOperative_Logic userOperative = new UserOperative_Logic();
 
         public ActionResult functionForAddContact(bool condition)
         {
@@ -152,6 +153,11 @@ namespace Presentation.Controllers
         public ActionResult SearchSubscription(int id)
         {
             return View(subscription.searchSubscription(id));
+        }
+
+        public ActionResult SearchOperative(int id)
+        {
+            return View(userOperative.searchOperators(id));
         }
     }
 }

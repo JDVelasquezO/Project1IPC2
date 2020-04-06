@@ -1,0 +1,53 @@
+﻿@model List<Entity.UserOperative_Entity>
+
+@{
+    ViewBag.Title = "SearchOperative";
+    Layout = "~/Views/Layouts/_LayoutContact.cshtml";
+}
+
+<div class="container">
+
+    <nav>
+        <div class="nav-wrapper blue">
+            <div class="col s12">
+                &nbsp;&nbsp;
+                <a href="/Index/HomeContact" class="breadcrumb">Home</a>
+                <a href="#" class="breadcrumb">Operativos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Operativos disponibles</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Puesto</th>
+                                <th>Celular</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.name_operative</td>
+                                    <td>@item.job</td>
+                                    <td>@item.celphone</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

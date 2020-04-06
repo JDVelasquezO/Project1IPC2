@@ -55,6 +55,7 @@
     <Compile Include="TypeContact_Entity.cs" />
     <Compile Include="TypeModule_Entity.cs" />
     <Compile Include="TypeSubscription_Entity.cs" />
+    <Compile Include="UserOperative_Entity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

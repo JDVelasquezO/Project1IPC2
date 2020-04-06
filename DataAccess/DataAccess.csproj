@@ -51,6 +51,7 @@
     <Compile Include="Subscription_Data.cs" />
     <Compile Include="TypeBusiness_Data.cs" />
     <Compile Include="TypeCard_Data.cs" />
+    <Compile Include="UserOperative_Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">
