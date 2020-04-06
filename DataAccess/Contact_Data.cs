@@ -249,7 +249,7 @@ namespace DataAccess
         public Contact_Entity searchContact(int id)
         {
             Contact_Entity contact = new Contact_Entity();
-        
+            
             try
             {
                 sqlConnection.Open();

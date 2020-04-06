@@ -68,7 +68,6 @@ namespace DataAccess
                 while (sqlDataReader.Read())
                 {
                     Module_Subscription_Entity module_subscription = new Module_Subscription_Entity();
-                    module_subscription.id_module_subscription = Convert.ToInt32(sqlDataReader["Identificador"]);
                     module_subscription.subscription.type_subscription = sqlDataReader["Tipo Suscripcion"].ToString();
                     module_subscription.module.name_module = sqlDataReader["Nombre Modulo"].ToString();
                     module_subscription.module.quetzals = sqlDataReader["Precio Q"].ToString();
