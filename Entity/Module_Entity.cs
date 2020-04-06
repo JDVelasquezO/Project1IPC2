@@ -14,6 +14,8 @@ namespace Entity
         public string desc_module { get; set; }
         public bool is_default { get; set; }
         public bool status_mode { get; set; }
+        public string quetzals { get; set; }
+        public string dollars { get; set; }
         public TypeModule_Entity typeModule = new TypeModule_Entity();
         public ClientBusiness_Entity clientBusiness = new ClientBusiness_Entity();
     }

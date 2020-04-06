@@ -11,8 +11,10 @@ namespace Presentation.Controllers
     public class ModuleController : Controller
     {
         Module_Logic module_Logic = new Module_Logic();
+        SizeBusiness_Logic sizeBusiness = new SizeBusiness_Logic();
 
         List<TypeModule_Entity> list_type_business = new List<TypeModule_Entity>();
+        List<SizeBusiness_Entity> list_size_business = new List<SizeBusiness_Entity>();
 
         public ActionResult ListModule()
         {
@@ -57,6 +59,9 @@ namespace Presentation.Controllers
         {
             list_type_business = module_Logic.listTypeModule();
             ViewBag.list_type_business = list_type_business;
+
+            list_size_business = sizeBusiness.listSizeBusiness();
+            ViewBag.list_size_business = list_size_business;
 
             return View();
         }

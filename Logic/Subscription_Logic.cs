@@ -17,7 +17,7 @@ namespace Logic
             return subscription_Data.listSubscription();
         }
 
-        public List<Subscription_Entity> searchSubscription(int id)
+        public List<Module_Subscription_Entity> searchSubscription(int id)
         {
             return subscription_Data.searchSubscription(id);
         }
