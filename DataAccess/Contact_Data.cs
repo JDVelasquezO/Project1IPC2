@@ -368,5 +368,43 @@ namespace DataAccess
 
             return response;
         }
+
+        public List<Module_Entity> searchModuleOfContact(int id)
+        {
+            List<Module_Entity> list = new List<Module_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("search_module_for_contact", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idContact";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = id;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Module_Entity module = new Module_Entity();
+                    module.id_module = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    module.name_module = sqlDataReader["Nombre Modulo"].ToString();
+                    module.desc_module = sqlDataReader["Descripcion"].ToString();
+
+                    list.Add(module);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }

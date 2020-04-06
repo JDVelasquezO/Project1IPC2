@@ -53,5 +53,10 @@ namespace Logic
         {
             return contact_Data.returnCredentials();
         }
+
+        public List<Module_Entity> searchModuleOfContact(int id)
+        {
+            return contact_Data.searchModuleOfContact(id);
+        }
     }
 }

@@ -159,5 +159,10 @@ namespace Presentation.Controllers
         {
             return View(userOperative.searchOperators(id));
         }
+
+        public ActionResult SearchModules(int id)
+        {
+            return PartialView(contact_Logic.searchModuleOfContact(id));
+        }
     }
 }

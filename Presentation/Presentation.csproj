@@ -131,6 +131,7 @@
     <Content Include="Views\Contact\SearchSubscription.cshtml" />
     <Content Include="Views\Module\AddModules.cshtml" />
     <Content Include="Views\Contact\SearchOperative.cshtml" />
+    <Content Include="Views\Contact\SearchModules.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
