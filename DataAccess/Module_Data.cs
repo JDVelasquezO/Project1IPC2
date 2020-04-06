@@ -194,5 +194,55 @@ namespace DataAccess
 
             return list;
         }
+
+        public bool addModule(Module_Entity module)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("add_module", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_name = new SqlParameter();
+                p_name.ParameterName = "@name_module";
+                p_name.SqlDbType = SqlDbType.VarChar;
+                p_name.Size = 20;
+                p_name.Value = module.name_module;
+
+                SqlParameter p_abbreviation = new SqlParameter();
+                p_abbreviation.ParameterName = "@abbreviation";
+                p_abbreviation.SqlDbType = SqlDbType.VarChar;
+                p_abbreviation.Size = 10;
+                p_abbreviation.Value = module.abb_module;
+
+                SqlParameter p_description = new SqlParameter();
+                p_description.ParameterName = "@description";
+                p_description.SqlDbType = SqlDbType.VarChar;
+                p_description.Size = 100;
+                p_description.Value = module.desc_module;
+
+                SqlParameter p_idTypeModule = new SqlParameter();
+                p_idTypeModule.ParameterName = "@idTypeModule";
+                p_idTypeModule.SqlDbType = SqlDbType.Int;
+                p_idTypeModule.Value = module.typeModule.id_type_module;
+
+                sqlCommand.Parameters.Add(p_name);
+                sqlCommand.Parameters.Add(p_abbreviation);
+                sqlCommand.Parameters.Add(p_description);
+                sqlCommand.Parameters.Add(p_idTypeModule);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }

@@ -60,5 +60,33 @@ namespace Presentation.Controllers
 
             return View();
         }
+
+        public ActionResult InsertModule(string module_name, string abreviation, string description, string cbxModule)
+        {
+            String script = "";
+
+            Module_Entity module = new Module_Entity();
+            module.name_module = module_name;
+            module.abb_module = abreviation;
+            module.desc_module = description;
+            module.typeModule.id_type_module = Convert.ToInt32(cbxModule);
+
+            if (module_Logic.addModule(module))
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('Modulo agregado correctamente'); " +
+                            "window.location.href = '/Index/Home'; " +
+                         "</script>";
+            }
+            else
+            {
+                script = "<script languaje='javascript'>" +
+                            "alert('No se pudo agregar');" +
+                            "window.location.href = '/ClientBusiness/AddClientBusiness'; " +
+                         "</script>";
+            }
+
+            return Content(script);
+        }
     }
 }

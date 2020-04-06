@@ -36,5 +36,10 @@ namespace Logic
         {
             return module_Data.listModuleOfContact(id);
         }
+
+        public bool addModule(Module_Entity module)
+        {
+            return module_Data.addModule(module);
+        }
     }
 }
