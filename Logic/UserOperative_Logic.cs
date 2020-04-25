@@ -26,5 +26,10 @@ namespace Logic
         {
             return operative_Data.searchOperativeById(id);
         }
+
+        public bool updatePassword(UserOperative_Entity userOperative)
+        {
+            return operative_Data.updatePassword(userOperative);
+        }
     }
 }

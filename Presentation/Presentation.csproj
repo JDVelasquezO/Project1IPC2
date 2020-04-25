@@ -138,6 +138,7 @@
     <Content Include="Views\Layouts\_LayoutOperative.cshtml" />
     <Content Include="Views\Index\HomeOperative.cshtml" />
     <Content Include="Views\Operator\searchOperative.cshtml" />
+    <Content Include="Views\Operator\ChanguePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

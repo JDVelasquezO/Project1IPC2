@@ -126,5 +126,41 @@ namespace DataAccess
 
             return userOperative;
         }
+
+        public bool updatePassword(UserOperative_Entity userOperative)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("update_pass_operative", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idOperative";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = userOperative.id_user_operative;
+
+                SqlParameter p_password = new SqlParameter();
+                p_password.ParameterName = "@Password";
+                p_password.SqlDbType = SqlDbType.VarChar;
+                p_password.Size = 20;
+                p_password.Value = userOperative.password;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                sqlCommand.Parameters.Add(p_password);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }

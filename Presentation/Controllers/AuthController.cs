@@ -67,22 +67,19 @@ namespace Presentation.Controllers
             }
             else if (email == emailContact && pass == passContact)
             {
-                if (idRol == 3)
-                {
-                    Session["adminContact"] = idContact;
+                Session["adminContact"] = idContact;
 
-                    script = "<script languaje='javascript'>" +
-                                "window.location.href='/Index/HomeContact'; " +
-                             "</script>";
-                }
-                else
-                {
-                    Session["operative"] = idOperative;
+                script = "<script languaje='javascript'>" +
+                            "window.location.href='/Index/HomeContact'; " +
+                            "</script>";
+            }
+            else if (email == emailOperative && pass == passOperative)
+            {
+                Session["operative"] = idOperative;
 
-                    script = "<script languaje='javascript'>" +
-                                "window.location.href='/Index/HomeOperative'; " +
-                             "</script>";
-                }
+                script = "<script languaje='javascript'>" +
+                            "window.location.href='/Index/HomeOperative'; " +
+                         "</script>";
             }
             else
             {
