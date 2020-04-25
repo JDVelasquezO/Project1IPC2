@@ -41,5 +41,15 @@ namespace Logic
         {
             return module_Data.addModule(module);
         }
+
+        public bool addModuleToClient(ClientBusiness_Module_Entity clientBusiness_Module)
+        {
+            return module_Data.addModuleToClient(clientBusiness_Module);
+        }
+
+        public int returnIDClient(int idContact)
+        {
+            return module_Data.returnIDClient(idContact);
+        }
     }
 }

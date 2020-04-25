@@ -72,5 +72,20 @@ namespace Presentation.Controllers
                 return View();
             }
         }
+
+        public ActionResult HomeOperative()
+        {
+            if (Session["operative"] == null)
+            {
+                return Content("<script>" +
+                                    "alert('Sesion Expirada'); " +
+                                    "window.location.href='/Auth/Login' " +
+                                "</script>");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

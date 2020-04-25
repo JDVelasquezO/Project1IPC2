@@ -10,6 +10,7 @@ namespace Presentation.Controllers
     public class AuthController : Controller
     {
         Contact_Logic contact_Logic = new Contact_Logic();
+        UserOperative_Logic userOperative = new UserOperative_Logic();
 
         // GET: Auth
         public ActionResult Login()
@@ -24,7 +25,11 @@ namespace Presentation.Controllers
             string emailContact = "";
             string passContact = "";
 
+            string emailOperative = "";
+            string passOperative = "";
+
             int idContact = 0;
+            int idOperative = 0;
             int idRol = 0;
 
             foreach (var item in contact_Logic.returnCredentials())
@@ -40,6 +45,18 @@ namespace Presentation.Controllers
                 }
             }
 
+            foreach (var item in userOperative.returnCredentials())
+            {
+                emailOperative = item.email;
+                passOperative = item.password;
+
+                if (email == emailOperative && pass == passOperative)
+                {
+                    idOperative = item.id_user_operative;
+                    break;
+                }
+            }
+
             if (email == "admin@gmail.com" && pass == "1234567")
             {
                 script = "<script languaje='javascript'>" +
@@ -50,28 +67,20 @@ namespace Presentation.Controllers
             }
             else if (email == emailContact && pass == passContact)
             {
-                if (idRol == 1)
-                {
-                    Session["comercialContact"] = idContact;
-
-                    script = "<script languaje='javascript'>" +
-                                "window.location.href='/Index/ComercialContact'; " +
-                             "</script>";
-                }
-                else if (idRol == 2)
-                {
-                    Session["financeContact"] = idContact;
-
-                    script = "<script languaje='javascript'>" +
-                                "window.location.href='/Index/FinanceContact'; " +
-                             "</script>";
-                }
-                else if (idRol == 3)
+                if (idRol == 3)
                 {
                     Session["adminContact"] = idContact;
 
                     script = "<script languaje='javascript'>" +
                                 "window.location.href='/Index/HomeContact'; " +
+                             "</script>";
+                }
+                else
+                {
+                    Session["operative"] = idOperative;
+
+                    script = "<script languaje='javascript'>" +
+                                "window.location.href='/Index/HomeOperative'; " +
                              "</script>";
                 }
             }

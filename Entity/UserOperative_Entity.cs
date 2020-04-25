@@ -14,6 +14,7 @@ namespace Entity
         public string celphone { get; set; }
         public string password { get; set; }
         public bool status { get; set; }
+        public string email { get; set; }
         public AdminServices_Entity adminServices = new AdminServices_Entity();
     }
 }

@@ -9,11 +9,11 @@ namespace Presentation.Controllers
 {
     public class OperatorController : Controller
     {
-        /*UserOperative_Logic userOperative = new UserOperative_Logic();
+        UserOperative_Logic userOperative = new UserOperative_Logic();
         // GET: Operator
-        public ActionResult Index()
+        public ActionResult searchOperative(int id)
         {
-            return View(userOperative.searchOperators());
-        }*/
+            return PartialView(userOperative.searchOperativeById(id));
+        }
     }
 }

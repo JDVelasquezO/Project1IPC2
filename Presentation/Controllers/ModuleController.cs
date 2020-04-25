@@ -12,9 +12,12 @@ namespace Presentation.Controllers
     {
         Module_Logic module_Logic = new Module_Logic();
         SizeBusiness_Logic sizeBusiness = new SizeBusiness_Logic();
+        ClientBusiness_Logic clientBusiness = new ClientBusiness_Logic();
 
         List<TypeModule_Entity> list_type_business = new List<TypeModule_Entity>();
         List<SizeBusiness_Entity> list_size_business = new List<SizeBusiness_Entity>();
+        List<Module_Entity> list_module = new List<Module_Entity>();
+        List<ClientBusiness_Entity> listClientBusiness = new List<ClientBusiness_Entity>();
 
         public ActionResult ListModule()
         {
@@ -92,6 +95,27 @@ namespace Presentation.Controllers
             }
 
             return Content(script);
+        }
+
+        public ActionResult ModuleShop()
+        {
+            list_module = module_Logic.listModule();
+            ViewBag.list_module = list_module;
+
+            listClientBusiness = clientBusiness.listClientBusiness();
+            ViewBag.list_client = listClientBusiness;
+
+            return View();
+        }
+
+        public int returnIdClient(int idContact)
+        {
+            return module_Logic.returnIDClient(idContact);
+        }
+
+        public ActionResult AcquireModule(int idContact, int idModule)
+        {
+            return Content("");
         }
     }
 }

@@ -244,5 +244,71 @@ namespace DataAccess
 
             return response;
         }
+
+        public bool addModuleToClient(ClientBusiness_Module_Entity clientBusiness_Module)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("add_clientBusiness_module", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_idCliente = new SqlParameter();
+                p_idCliente.ParameterName = "@idClient";
+                p_idCliente.SqlDbType = SqlDbType.Int;
+                p_idCliente.Value = clientBusiness_Module.clientBusiness.id_client_business;
+
+                SqlParameter p_idModule = new SqlParameter();
+                p_idModule.ParameterName = "@idModule";
+                p_idModule.SqlDbType = SqlDbType.VarChar;
+                p_idModule.Value = clientBusiness_Module.module.id_module;
+
+                sqlCommand.Parameters.Add(p_idCliente);
+                sqlCommand.Parameters.Add(p_idModule);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
+
+        public int returnIDClient(int idContact)
+        {
+            int idClient = 0;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("return_idClient", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idModule";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = idContact;
+
+                while (sqlDataReader.Read())
+                {
+                    idClient = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    break;
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return idClient;
+        }
     }
 }

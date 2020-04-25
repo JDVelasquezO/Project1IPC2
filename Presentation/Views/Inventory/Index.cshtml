@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/_LayoutContact.cshtml";
+}
+
+<div class="container">
+        <nav>
+            <div class="nav-wrapper blue">
+                <div class="col s12">
+                    &nbsp;&nbsp;
+                    <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
+                    <a href="#" class="breadcrumb">Inventario</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="card">
+            <div class="card-content">
+                <h4>Modulo de Inventario</h4>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">business</i>
+                            Gestión de Bodega
+                        </div>
+                        <div class="collapsible-body">
+                            <p>Crear una o mas bodegas.</p>
+                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">euro_symbol</i>
+                            Gestión de Costos
+                        </div>
+                        <div class="collapsible-body">
+                            <p>Enviar lotes de productos a bodegas.</p>
+                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">event_available</i>
+                            Transacciones por Bodega
+                        </div>
+                        <div class="collapsible-body">
+                            <p>Ingresar o extraer productos de bodegas.</p>
+                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">exit_to_app</i>
+                            Transferencia entre Bodega
+                        </div>
+                        <div class="collapsible-body">
+                            <p>Enviar productos de una bodega a otra.</p>
+                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">event_note</i>
+                            Informes a presentar
+                        </div>
+                        <div class="collapsible-body">
+                            <p>Reportes.</p>
+                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+</script>

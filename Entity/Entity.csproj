@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdminServices_Entity.cs" />
     <Compile Include="ClientBusiness_Entity.cs" />
+    <Compile Include="ClientBusiness_Module_Entity.cs" />
     <Compile Include="Contact_Entity.cs" />
     <Compile Include="CreditCard_Entity.cs" />
     <Compile Include="Module_Entity.cs" />

@@ -16,5 +16,15 @@ namespace Logic
         {
             return operative_Data.searchOperators(id);
         }
+
+        public List<UserOperative_Entity> returnCredentials()
+        {
+            return operative_Data.returnCredentials();
+        }
+
+        public UserOperative_Entity searchOperativeById(int id)
+        {
+            return operative_Data.searchOperativeById(id);
+        }
     }
 }

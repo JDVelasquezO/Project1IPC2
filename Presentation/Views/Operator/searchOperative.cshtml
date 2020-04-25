@@ -1,0 +1,32 @@
+﻿@model Entity.UserOperative_Entity
+
+<h4>Bienvenido @Model.name_operative</h4>
+@Html.ActionLink("Cambiar Contraseña", "ChanguePassword", new { id = Model.id_user_operative })
+<nav>
+    <div class="nav-wrapper blue">
+        <div class="col s12">
+            &nbsp;&nbsp;
+            <a href="/Index/Home" class="breadcrumb">Home</a>
+        </div>
+    </div>
+</nav>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Modulos Disponibles</span>
+        <div id="modules">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Modulo de Inventario</span>
+                        </div>
+                        <div class="card-action">
+                            <a href="/Inventory/Index">Ir a la aplicación</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

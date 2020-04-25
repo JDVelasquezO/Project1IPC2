@@ -98,6 +98,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\OperatorController.cs" />
     <Compile Include="Controllers\SubscriptionController.cs" />
@@ -132,6 +133,11 @@
     <Content Include="Views\Module\AddModules.cshtml" />
     <Content Include="Views\Contact\SearchOperative.cshtml" />
     <Content Include="Views\Contact\SearchModules.cshtml" />
+    <Content Include="Views\Module\ModuleShop.cshtml" />
+    <Content Include="Views\Inventory\Index.cshtml" />
+    <Content Include="Views\Layouts\_LayoutOperative.cshtml" />
+    <Content Include="Views\Index\HomeOperative.cshtml" />
+    <Content Include="Views\Operator\searchOperative.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -143,7 +149,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Public\" />
-    <Folder Include="Views\Operator\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">

@@ -1,0 +1,70 @@
+﻿@{
+    var list_modules = ViewBag.list_module;
+    var list_client = ViewBag.list_client;
+
+    int idContact = Convert.ToInt32(Session["adminContact"]);
+    int idClient = 0;
+
+    ViewBag.Title = "ModuleShop";
+    Layout = "~/Views/Layouts/_LayoutContact.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <nav>
+            <div class="nav-wrapper blue">
+                <div class="col s12">
+                    &nbsp;&nbsp;
+                    <a href="/Index/HomeContact" class="breadcrumb">Home</a>
+                    <a href="#" class="breadcrumb">Tienda de Modulos</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Todos los Modulos</span>
+                    <div id="modules">
+                        <div class="row">
+                            @foreach (var item in list_modules)
+                            {
+                                <div class="col s12">
+                                    @using (Html.BeginForm("AcquireModule", "Module", FormMethod.Post))
+                                    {
+                                        <div class="card blue-grey darken-1">
+                                            <input type="hidden" name="idCliente" value="idContact" />
+                                            <div class="card-content white-text">
+                                                <span class="card-title">Modulo de @item.name_module</span>
+                                                <p>
+                                                    @item.desc_module
+                                                </p>
+                                            </div>
+                                            <input type="hidden" name="idModule" value="@item.id_module" />
+                                            <div class="card-action">
+                                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                                    Agregar
+                                                    <i class="material-icons right">add</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+</script>

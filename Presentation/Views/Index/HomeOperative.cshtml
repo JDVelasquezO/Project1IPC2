@@ -1,0 +1,14 @@
+﻿@model Entity.UserOperative_Entity
+
+@{
+    ViewBag.Title = "HomeOperative";
+    Layout = "~/Views/Layouts/_LayoutOperative.cshtml";
+
+    int idOperative = Convert.ToInt32(Session["operative"]);
+}
+
+<div class="container">
+    @{ 
+        Html.RenderAction("searchOperative", "Operator", new { id = idOperative });
+    }
+</div>
