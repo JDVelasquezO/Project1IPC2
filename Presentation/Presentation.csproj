@@ -102,6 +102,7 @@
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\OperatorController.cs" />
     <Compile Include="Controllers\SubscriptionController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,6 +140,8 @@
     <Content Include="Views\Index\HomeOperative.cshtml" />
     <Content Include="Views\Operator\searchOperative.cshtml" />
     <Content Include="Views\Operator\ChanguePassword.cshtml" />
+    <Content Include="Views\Inventory\LookWarehouse.cshtml" />
+    <Content Include="Views\Warehouse\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

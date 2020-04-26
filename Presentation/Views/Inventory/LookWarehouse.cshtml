@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "LookWarehouse";
+    Layout = "~/Views/Layouts/_LayoutOperative.cshtml";
+
+    int idOperative = Convert.ToInt32(Session["operative"]);
+}
+
+<div class="container">
+    <nav>
+        <div class="nav-wrapper blue">
+            <div class="col s12">
+                &nbsp;&nbsp;
+                <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
+                <a href="/Inventory/Index" class="breadcrumb">Inventario</a>
+                <a href="#" class="breadcrumb">Bodegas</a>
+            </div>
+        </div>
+    </nav>
+
+    @{
+        Html.RenderAction("Index", "Warehouse", new { id = idOperative });
+    }
+</div>

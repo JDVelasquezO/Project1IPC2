@@ -31,5 +31,15 @@ namespace Logic
         {
             return operative_Data.updatePassword(userOperative);
         }
+
+        public int getIdClientBusiness(int idOperative)
+        {
+            return operative_Data.getIdClientBusiness(idOperative);
+        }
+
+        public List<Warehouse_Entity> getWarehouseOfClient(int id)
+        {
+            return operative_Data.getWarehouseOfClient(id);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Presentation.Controllers
     public class OperatorController : Controller
     {
         UserOperative_Logic userOperative = new UserOperative_Logic();
+
         // GET: Operator
         public ActionResult searchOperative(int id)
         {
@@ -51,5 +52,6 @@ namespace Presentation.Controllers
 
             return Content(script);
         }
+
     }
 }

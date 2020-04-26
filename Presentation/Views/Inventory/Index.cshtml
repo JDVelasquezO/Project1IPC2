@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layouts/_LayoutContact.cshtml";
+
+    int idOperative = Convert.ToInt32(Session["operative"]);
 }
 
 <div class="container">
@@ -26,7 +28,8 @@
                         </div>
                         <div class="collapsible-body">
                             <p>Crear una o mas bodegas.</p>
-                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+                            @Html.ActionLink("Bodegas", "LookWarehouse",
+                            new { id = idOperative })
                         </div>
                     </li>
                     <li>

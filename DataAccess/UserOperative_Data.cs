@@ -162,5 +162,75 @@ namespace DataAccess
 
             return response;
         }
+
+        public int getIdClientBusiness(int idOperative)
+        {
+            int idClientBusiness = 0;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("return_idclientbusiness", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idOperative";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = idOperative;
+
+                sqlCommand.Parameters.Add(id_parameter);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                sqlDataReader.Read();
+
+                if (sqlDataReader.HasRows)
+                {
+                    idClientBusiness = Convert.ToInt32(sqlDataReader["Identificador"]);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return idClientBusiness;
+        }
+
+        public List<Warehouse_Entity> getWarehouseOfClient(int id)
+        {
+            List<Warehouse_Entity> list = new List<Warehouse_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("return_warehouse", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idOperative";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = id;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Warehouse_Entity warehouse = new Warehouse_Entity();
+                    warehouse.idWarehouse = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    warehouse.name = sqlDataReader["Nombre"].ToString();
+                    warehouse.description = sqlDataReader["Descripcion"].ToString();
+                    warehouse.address = sqlDataReader["Direccion"].ToString();
+
+                    list.Add(warehouse);
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }

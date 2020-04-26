@@ -1,0 +1,30 @@
+﻿@model List<Entity.Warehouse_Entity>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Bodegas Disponibles</span>
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Dirección</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.name</td>
+                            <td>@item.description</td>
+                            <td>@item.address</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+</div>
