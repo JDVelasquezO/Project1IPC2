@@ -44,6 +44,8 @@ namespace DataAccess
 
                     list.Add(operative);
                 }
+
+                sqlConnection.Close();
             }
             catch (Exception e)
             {
@@ -117,6 +119,8 @@ namespace DataAccess
                     userOperative.celphone = sqlDataReader["Celular"].ToString();
                     userOperative.password = sqlDataReader["Password"].ToString();
                 }
+
+                sqlConnection.Close();
             }
             catch (Exception)
             {
@@ -154,6 +158,8 @@ namespace DataAccess
                 sqlCommand.ExecuteNonQuery();
 
                 response = true;
+
+                sqlConnection.Close();
             }
             catch (Exception e)
             {
@@ -187,6 +193,8 @@ namespace DataAccess
                 {
                     idClientBusiness = Convert.ToInt32(sqlDataReader["Identificador"]);
                 }
+
+                sqlConnection.Close();
             }
             catch (Exception)
             {
@@ -207,7 +215,7 @@ namespace DataAccess
                 sqlCommand.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter id_parameter = new SqlParameter();
-                id_parameter.ParameterName = "@idOperative";
+                id_parameter.ParameterName = "@idClientBusiness";
                 id_parameter.SqlDbType = SqlDbType.Int;
                 id_parameter.Value = id;
 
@@ -224,6 +232,8 @@ namespace DataAccess
 
                     list.Add(warehouse);
                 }
+
+                sqlConnection.Close();
             }
             catch (Exception e)
             {

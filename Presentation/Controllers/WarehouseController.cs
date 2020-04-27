@@ -13,7 +13,8 @@ namespace Presentation.Controllers
         // GET: Warehouse
         public ActionResult Index(int id)
         {
-            return PartialView(userOperative.getWarehouseOfClient(id));
+            int idClientBusiness = userOperative.getIdClientBusiness(id);
+            return PartialView(userOperative.getWarehouseOfClient(idClientBusiness));
         }
     }
 }
