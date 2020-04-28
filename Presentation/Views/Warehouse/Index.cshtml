@@ -1,30 +1,97 @@
 ﻿@model List<Entity.Warehouse_Entity>
 
-<div class="card">
-    <div class="card-content">
-        <span class="card-title">Bodegas Disponibles</span>
-        <div class="row">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Dirección</th>
-                    </tr>
-                </thead>
+@{
+    int idOperative = Convert.ToInt32(Session["operative"]);
+}
 
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.name</td>
-                            <td>@item.description</td>
-                            <td>@item.address</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+<div class="row">
+    <div class="col s6">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <span class="card-title">Bodegas Disponibles</span>
+                        <div class="row">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Dirección</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.name</td>
+                                            <td>@item.description</td>
+                                            <td>@item.address</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+
+    <div class="col s6">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <span class="card-title">Crear Bodegas</span>
+                        <div class="row">
+                            <br />
+                            @using (Html.BeginForm("InsertWarehouse", "Warehouse", FormMethod.Post))
+                            {
+                                <div>
+                                    <input type="hidden" name="idOperative" value="@idOperative" />
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input autofocus name="name_warehouse" type="text" class="validate">
+                                            <label for="first_name">Nombre Bodega</label>
+                                        </div>
+
+                                        <div class="input-field col s12">
+                                            <input name="desc_warehouse" type="text" class="validate">
+                                            <label for="first_name">Descripción</label>
+                                        </div>
+
+                                        <div class="input-field col s12">
+                                            <input name="address_warehouse" type="text" class="validate">
+                                            <label for="first_name">Dirección</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                                        Registrar
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            }
+                            @using (Html.BeginForm("CreateHall", "Hall", FormMethod.Post))
+                            {
+                                <input type="hidden" name="idOperative" value="@idOperative" />
+                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                    Crear Pasillos
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+</script>

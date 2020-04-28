@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "CreateHall";
+    Layout = "~/Views/Layouts/_LayoutOperative.cshtml";
+
+    var listWarehouses = ViewBag.ListTypeBusiness;
+}
+
+<div class="container">
+    <nav>
+        <div class="nav-wrapper blue">
+            <div class="col s12">
+                &nbsp;&nbsp;
+                <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
+                <a href="#" class="breadcrumb">Inventario</a>
+                <a href="#" class="breadcrumb">Bodegas</a>
+                <a href="#" class="breadcrumb">Pasillos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="row">
+                <div class="col s12">
+                    <span class="card-title">Crear Pasillos</span>
+                    <div class="row">
+                        <br />
+                        @using (Html.BeginForm("InsertHall", "Hall", FormMethod.Post))
+                        {
+                            <div>
+                                <div class="row">
+                                    <div class="input-field col s4">
+                                        <input autofocus name="no_hall" type="number" class="validate">
+                                        <label for="first_name">Numero Pasillo</label>
+                                    </div>
+
+                                    <div class="input-field col s4">
+                                        <input name="width_hall" type="text" class="validate">
+                                        <label for="first_name">Ancho</label>
+                                    </div>
+
+                                    <div class="input-field col s4">
+                                        <input name="length_hall" type="text" class="validate">
+                                        <label for="first_name">Largo</label>
+                                    </div>
+
+                                    <div class="input-field col s6">
+                                        <select>
+                                            <option value="" disabled selected>Escoger Bodegas</option>
+                                            @foreach (var item in listWarehouses)
+                                            {
+                                                <option value="@item.idWarehouse">@item.name</option>
+                                            }
+                                        </select>
+                                        <label>Bodegas</label>
+                                    </div>
+
+                                    <div class="col s4">
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">
+                                            Registrar
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+    });
+</script>

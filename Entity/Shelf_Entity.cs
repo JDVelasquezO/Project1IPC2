@@ -13,5 +13,6 @@ namespace Entity
         public float heigth { get; set; }
         public float width { get; set; }
         public float length { get; set; }
+        public Hall_Entity hall = new Hall_Entity();
     }
 }

@@ -97,6 +97,7 @@
     <Compile Include="Controllers\ClientBusinessController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CreditCardController.cs" />
+    <Compile Include="Controllers\HallController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
@@ -142,6 +143,8 @@
     <Content Include="Views\Operator\ChanguePassword.cshtml" />
     <Content Include="Views\Inventory\LookWarehouse.cshtml" />
     <Content Include="Views\Warehouse\Index.cshtml" />
+    <Content Include="Views\Hall\Index.cshtml" />
+    <Content Include="Views\Hall\CreateHall.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
