@@ -15,7 +15,7 @@ namespace DataAccess
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
 
-        public bool InsertShelf(Level_Entity level)
+        public bool InsertLevel(Level_Entity level)
         {
             bool response = false;
 
@@ -28,7 +28,7 @@ namespace DataAccess
                 SqlParameter p_height = new SqlParameter();
                 p_height.ParameterName = "@height";
                 p_height.SqlDbType = SqlDbType.Int;
-                p_height.Value = level.height;
+                p_height.Value = 2;
 
                 SqlParameter fkIdShelf = new SqlParameter();
                 fkIdShelf.ParameterName = "@fkIdShelf";

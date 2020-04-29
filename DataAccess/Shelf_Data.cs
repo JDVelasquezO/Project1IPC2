@@ -15,6 +15,43 @@ namespace DataAccess
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
 
+        public List<Shelf_Entity> getShelfsByClientBusiness(int idClientBusiness)
+        {
+            List<Shelf_Entity> list = new List<Shelf_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("get_shelfs_byIdClientBusiness", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idClientBusiness";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = idClientBusiness;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Shelf_Entity shelf = new Shelf_Entity();
+                    shelf.id_sheld = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    shelf.letter = sqlDataReader["Nombre"].ToString();
+
+                    list.Add(shelf);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
+
         public bool InsertShelf(Shelf_Entity shelf)
         {
             bool response = false;

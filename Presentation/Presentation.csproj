@@ -100,6 +100,7 @@
     <Compile Include="Controllers\HallController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\LevelController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\OperatorController.cs" />
     <Compile Include="Controllers\ShielfController.cs" />
@@ -146,6 +147,7 @@
     <Content Include="Views\Warehouse\Index.cshtml" />
     <Content Include="Views\Hall\CreateHall.cshtml" />
     <Content Include="Views\Shielf\CreateShielf.cshtml" />
+    <Content Include="Views\Level\CreateLevels.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

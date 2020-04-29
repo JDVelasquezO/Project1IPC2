@@ -16,5 +16,10 @@ namespace Logic
         {
             return shelf_Data.InsertShelf(shelf);
         }
+
+        public List<Shelf_Entity> getShelfsByClientBusiness(int idClientBusiness)
+        {
+            return shelf_Data.getShelfsByClientBusiness(idClientBusiness);
+        }
     }
 }
