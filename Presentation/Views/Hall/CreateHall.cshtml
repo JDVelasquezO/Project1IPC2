@@ -4,6 +4,8 @@
     Layout = "~/Views/Layouts/_LayoutOperative.cshtml";
 
     var listWarehouses = ViewBag.ListTypeBusiness;
+
+    int idOperative = Convert.ToInt32(Session["operative"]);
 }
 
 <div class="container">
@@ -12,7 +14,7 @@
             <div class="col s12">
                 &nbsp;&nbsp;
                 <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
-                <a href="#" class="breadcrumb">Inventario</a>
+                <a href="/Inventory/Index" class="breadcrumb">Inventario</a>
                 <a href="#" class="breadcrumb">Bodegas</a>
                 <a href="#" class="breadcrumb">Pasillos</a>
             </div>
@@ -46,7 +48,7 @@
                                     </div>
 
                                     <div class="input-field col s6">
-                                        <select>
+                                        <select name="cbxIdWarehouse">
                                             <option value="" disabled selected>Escoger Bodegas</option>
                                             @foreach (var item in listWarehouses)
                                             {
@@ -63,6 +65,17 @@
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+                        }
+
+                        @using (Html.BeginForm("CreateShielf", "Shielf", FormMethod.Post))
+                        {
+                            <input type="hidden" name="idOperative" value="@idOperative" />
+                            <div class="col s4">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                    Crear Estantes
+                                    <i class="material-icons right">send</i>
+                                </button>
                             </div>
                         }
                     </div>

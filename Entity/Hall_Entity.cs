@@ -12,6 +12,7 @@ namespace Entity
         public int no_hall { get; set; }
         public float width { get; set; }
         public float length { get; set; }
+        public string dimensions { get; set; }
         public Warehouse_Entity warehouse = new Warehouse_Entity();
     }
 }

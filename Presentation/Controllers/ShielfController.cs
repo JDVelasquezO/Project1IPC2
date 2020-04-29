@@ -8,37 +8,38 @@ using System.Web.Mvc;
 
 namespace Presentation.Controllers
 {
-    public class HallController : Controller
+    public class ShielfController : Controller
     {
         UserOperative_Logic userOperative = new UserOperative_Logic();
-        Warehouse_Logic warehouse = new Warehouse_Logic();
         Hall_Logic hall_Logic = new Hall_Logic();
+        Shelf_Logic shelf_Logic = new Shelf_Logic();
 
-        List<Warehouse_Entity> list_warehouses = new List<Warehouse_Entity>();
-        // GET: Hall
+        List<Hall_Entity> list_halls = new List<Hall_Entity>();
+
+        // GET: Shielf
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult CreateHall(int idOperative)
+        public ActionResult CreateShielf(int idOperative)
         {
             int idClientBusiness = userOperative.getIdClientBusiness(idOperative);
-            list_warehouses = userOperative.getWarehouseOfClient(idClientBusiness);
-            ViewBag.ListTypeBusiness = list_warehouses;
+            list_halls = hall_Logic.getHallsByClientBusiness(idClientBusiness);
+            ViewBag.ListHalls = list_halls;
+
             return View();
         }
 
-        public ActionResult InsertHall(int cbxIdWarehouse, int no_hall, float width_hall, float length_hall)
+        public ActionResult InsertShielf(string letter_shielf, float heigth_shielf, int cbxIdShelf)
         {
-            Hall_Entity hall = new Hall_Entity();
+            Shelf_Entity shelf = new Shelf_Entity();
 
-            hall.warehouse.idWarehouse = cbxIdWarehouse;
-            hall.no_hall = no_hall;
-            hall.width = width_hall;
-            hall.length = length_hall;
+            shelf.hall.id_hall = cbxIdShelf;
+            shelf.letter = letter_shielf;
+            shelf.heigth = heigth_shielf;
 
-            if (hall_Logic.InsertHall(hall))
+            if (shelf_Logic.InsertShelf(shelf))
             {
                 return Content("<script>alert('Agregado Correctamente');</script>");
             }

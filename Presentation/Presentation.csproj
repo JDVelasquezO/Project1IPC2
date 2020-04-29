@@ -102,6 +102,7 @@
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\OperatorController.cs" />
+    <Compile Include="Controllers\ShielfController.cs" />
     <Compile Include="Controllers\SubscriptionController.cs" />
     <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Global.asax.cs">
@@ -143,8 +144,8 @@
     <Content Include="Views\Operator\ChanguePassword.cshtml" />
     <Content Include="Views\Inventory\LookWarehouse.cshtml" />
     <Content Include="Views\Warehouse\Index.cshtml" />
-    <Content Include="Views\Hall\Index.cshtml" />
     <Content Include="Views\Hall\CreateHall.cshtml" />
+    <Content Include="Views\Shielf\CreateShielf.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

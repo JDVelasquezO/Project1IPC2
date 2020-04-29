@@ -26,19 +26,19 @@ namespace DataAccess
                 sqlCommand.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter p_name = new SqlParameter();
-                p_name.ParameterName = "@no_hall";
+                p_name.ParameterName = "@name_shelf";
                 p_name.SqlDbType = SqlDbType.VarChar;
                 p_name.Value = shelf.letter;
 
                 SqlParameter p_width = new SqlParameter();
                 p_width.ParameterName = "@width";
                 p_width.SqlDbType = SqlDbType.Int;
-                p_width.Value = shelf.width;
+                p_width.Value = 5;
 
                 SqlParameter p_length = new SqlParameter();
                 p_length.ParameterName = "@length";
                 p_length.SqlDbType = SqlDbType.Int;
-                p_length.Value = shelf.length;
+                p_length.Value = 10;
 
                 SqlParameter p_height = new SqlParameter();
                 p_height.ParameterName = "@height";

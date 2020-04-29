@@ -62,5 +62,43 @@ namespace DataAccess
 
             return response;
         }
+
+        public List<Hall_Entity> getHallsByClientBusiness(int idClientBusiness)
+        {
+            List<Hall_Entity> list = new List<Hall_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("get_halls_client", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idClientBusiness";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = idClientBusiness;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Hall_Entity hall = new Hall_Entity();
+                    hall.id_hall = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    hall.dimensions = sqlDataReader["Dimensiones"].ToString();
+                    hall.warehouse.idWarehouse = Convert.ToInt32(sqlDataReader["ID_Bodega"]);
+
+                    list.Add(hall);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }
