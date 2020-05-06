@@ -14,10 +14,12 @@ namespace DataAccess
     {
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
+        Product_Data product_Data = new Product_Data();
 
         public bool addCostInboundTransaction(InboundTransaction inbound)
         {
             bool response = false;
+            float priceProduct = 0;
 
             try
             {
@@ -29,6 +31,8 @@ namespace DataAccess
                 p_idProd.ParameterName = "@fkIdProd";
                 p_idProd.SqlDbType = SqlDbType.Int;
                 p_idProd.Value = inbound.product.id_product;
+
+                priceProduct = product_Data.getCostProductById(inbound.product.id_product);
 
                 SqlParameter p_idWarehouse = new SqlParameter();
                 p_idWarehouse.ParameterName = "@fkIdLevel";
@@ -53,7 +57,7 @@ namespace DataAccess
                 SqlParameter p_costProd = new SqlParameter();
                 p_costProd.ParameterName = "@costProd";
                 p_costProd.SqlDbType = SqlDbType.Float;
-                p_costProd.Value = inbound.product.price;
+                p_costProd.Value = priceProduct;
 
                 SqlParameter p_totalCost = new SqlParameter();
                 p_totalCost.ParameterName = "@totalCost";

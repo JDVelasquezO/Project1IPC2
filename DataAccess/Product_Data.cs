@@ -15,6 +15,32 @@ namespace DataAccess
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand sqlCommand;
 
+        public float getCostProductById(int id)
+        {
+            float price = 0;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand($"SELECT price FROM product WHERE id_product = {id}", sqlConnection);
+                
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                if (sqlDataReader.Read())
+                {
+                    price = float.Parse(sqlDataReader["price"].ToString());
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return price;
+        }
+        
         public List<Product_Entity> getProductsOfClient(int id)
         {
             List<Product_Entity> list = new List<Product_Entity>();
