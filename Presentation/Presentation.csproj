@@ -96,6 +96,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ClientBusinessController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CostController.cs" />
     <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\HallController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -148,6 +149,8 @@
     <Content Include="Views\Hall\CreateHall.cshtml" />
     <Content Include="Views\Shielf\CreateShielf.cshtml" />
     <Content Include="Views\Level\CreateLevels.cshtml" />
+    <Content Include="Views\Cost\AddCost.cshtml" />
+    <Content Include="Views\Inventory\LookCostLots.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

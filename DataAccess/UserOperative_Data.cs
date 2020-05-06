@@ -228,6 +228,7 @@ namespace DataAccess
                     warehouse.idWarehouse = Convert.ToInt32(sqlDataReader["Identificador"]);
                     warehouse.name = sqlDataReader["Nombre"].ToString();
                     warehouse.description = sqlDataReader["Descripcion"].ToString();
+                    warehouse.idInventory = Convert.ToInt32(sqlDataReader["Inventario"]);
                     warehouse.address = sqlDataReader["Direccion"].ToString();
 
                     list.Add(warehouse);

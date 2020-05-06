@@ -48,6 +48,7 @@
     <Compile Include="Hall_Data.cs" />
     <Compile Include="Level_Data.cs" />
     <Compile Include="Module_Data.cs" />
+    <Compile Include="Product_Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shelf_Data.cs" />
     <Compile Include="SizeBusiness_Data.cs" />

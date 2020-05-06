@@ -48,6 +48,7 @@
     <Compile Include="Hall_Logic.cs" />
     <Compile Include="Level_Logic.cs" />
     <Compile Include="Module_Logic.cs" />
+    <Compile Include="Product_Logic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shelf_Logic.cs" />
     <Compile Include="SizeBusiness_Logic.cs" />

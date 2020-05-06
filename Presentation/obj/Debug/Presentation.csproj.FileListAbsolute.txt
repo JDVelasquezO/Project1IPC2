@@ -47,6 +47,9 @@ C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presenta
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\roslyn\vbc.rsp
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\roslyn\VBCSCompiler.exe
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\DataAccess.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Entity.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Logic.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Helpers.dll
@@ -55,6 +58,9 @@ C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presenta
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Webpages.Deployment.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Webpages.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Webpages.Razor.dll
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\DataAccess.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Entity.pdb
+C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Logic.pdb
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Razor.xml
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Webpages.xml
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\System.Web.Webpages.Deployment.xml
@@ -73,9 +79,3 @@ C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presenta
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\obj\Debug\Presentation.dll
 C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\obj\Debug\Presentation.pdb
-C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\DataAccess.dll
-C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Entity.dll
-C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Logic.dll
-C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\DataAccess.pdb
-C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Entity.pdb
-C:\Users\JDVelasquezO\USAC\Tercer Año\IPC2\Proyecto\Fase 2\ProyectoIPC\Presentation\bin\Logic.pdb
