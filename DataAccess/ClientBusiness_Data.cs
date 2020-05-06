@@ -135,6 +135,8 @@ namespace DataAccess
                 sqlCommand.ExecuteNonQuery();
 
                 response = true;
+
+                sqlConnection.Close();
             }
             catch(Exception e)
             {

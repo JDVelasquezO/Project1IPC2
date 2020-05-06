@@ -1,6 +1,7 @@
 ﻿@{ 
     var listLevels = ViewBag.ListLevels;
     var listProducts = ViewBag.ListProducts;
+    var listProviders = ViewBag.ListProviders;
 
     int idOperative = Convert.ToInt32(Session["operative"]);
 }
@@ -12,51 +13,82 @@
                 <div class="card-content">
                     <span class="card-title">Registrar Producto en Bodega</span>
                     <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <select>
-                                        <option value="" disabled selected>Escoger Nivel</option>
-                                        @foreach (var item in listLevels)
-                                        {
-                                        <option value="@item.id_level">
-                                            Nivel @item.id_level - Estante @item.shelf.letter - 
-                                            Pasillo @item.shelf.hall.id_hall - 
-                                            Bodega @item.shelf.hall.warehouse.name
-                                        </option>
-                                        }
-                                    </select>
-                                </div>
+                        @using (Html.BeginForm("InsertCost", "Cost", FormMethod.Post))
+                        {
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <select name="selectLevel">
+                                            <option value="" disabled selected>Escoger Nivel</option>
+                                            @foreach (var item in listLevels)
+                                            {
+                                                <option value="@item.id_level">
+                                                    Nivel @item.id_level - Estante @item.shelf.letter -
+                                                    Pasillo @item.shelf.hall.id_hall -
+                                                    Bodega @item.shelf.hall.warehouse.name
+                                                </option>
+                                            }
+                                        </select>
+                                    </div>
 
-                                <div class="input-field col s6">
-                                    <select>
-                                        <option value="" disabled selected>Escoger Producto</option>
-                                        @foreach (var item in listProducts)
-                                        {
-                                            <option value="@item.id_product">@item.name</option>
-                                        }
-                                    </select>
+                                    <div class="input-field col s12">
+                                        <select name="selectProd">
+                                            <option value="" disabled selected>Escoger Producto</option>
+                                            @foreach (var item in listProducts)
+                                            {
+                                                <option value="@item.id_product">@item.name</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field col s4">
+                                        <input autofocus name="quantity" type="number" class="validate">
+                                        <label for="first_name">Cantidad de Productos por lote</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input name="quantityLots" type="number" class="validate">
+                                        <label for="last_name">Cantidad de lotes</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input name="costTotal" type="number" class="validate">
+                                        <label for="last_name">Costo total de movimiento</label>
+                                    </div>
+
+                                    <div class="input-field col s4">
+                                        <select name="selectLogic">
+                                            <option value="" disabled selected>Escoger Lógica</option>
+                                            <option value="UEPS">UEPS</option>
+                                            <option value="PEPS">PEPS</option>
+                                        </select>
+                                        <label>Lógica de E/S</label>
+                                    </div>
+
+                                    <div class="input-field col s4">
+                                        <select name="selectProvider">
+                                            <option value="" disabled selected>Escoger Proveedor</option>
+                                            @foreach (var item in listProviders)
+                                            {
+                                                <option value="@item.id_provider">@item.name_provider</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field col s4">
+                                        <select name="selectTransaction">
+                                            <option value="" disabled selected>Escoger Transaccion</option>
+                                            <option value="Entrada">Entrada</option>
+                                            <option value="Salida">Salida</option>
+                                        </select>
+                                        <label>Tipo de Transacción</label>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
-
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input autofocus id="quantity" type="number" class="validate">
-                                    <label for="first_name">Cantidad de Productos por lote</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="last_name" type="number" class="validate">
-                                    <label for="last_name">Cantidad de lotes</label>
-                                </div>
-                            </div>
-                        </form>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                                Registrar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        }
                     </div>
-                </div>
-                <div class="card-action">
-                    @Html.ActionLink("Escoger Estante", "ChooseHall",
-                    new { id = idOperative })
                 </div>
             </div>
         </div>

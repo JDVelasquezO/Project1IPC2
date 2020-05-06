@@ -37,10 +37,11 @@ namespace DataAccess
                 {
                     Product_Entity product = new Product_Entity();
                     product.id_product = Convert.ToInt32(sqlDataReader["Identificador"]);
-                    product.bar_code = Convert.ToInt32(sqlDataReader["Codigo Barras"]);
+                    product.bar_code = Convert.ToInt32(sqlDataReader["Codigo de Barras"]);
                     product.name = sqlDataReader["Nombre"].ToString();
                     product.description = sqlDataReader["Descripcion"].ToString();
                     product.clasification = sqlDataReader["Clasificacion"].ToString();
+                    product.price = float.Parse(sqlDataReader["Precio"].ToString());
 
                     list.Add(product);
                 }
