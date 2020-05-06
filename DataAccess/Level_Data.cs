@@ -50,5 +50,46 @@ namespace DataAccess
 
             return response;
         }
+
+        public List<Level_Entity> getLevelsByClientBusiness(int idClientBusiness)
+        {
+            List<Level_Entity> list = new List<Level_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("return_level", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idClientBusiness";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = idClientBusiness;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Level_Entity level = new Level_Entity();
+                    level.id_level = Convert.ToInt32(sqlDataReader["ID Nivel"]);
+                    level.shelf.id_sheld = Convert.ToInt32(sqlDataReader["ID Estante"]);
+                    level.shelf.letter = sqlDataReader["Estante"].ToString();
+                    level.shelf.hall.id_hall = Convert.ToInt32(sqlDataReader["ID Pasillo"]);
+                    level.shelf.hall.warehouse.idWarehouse = Convert.ToInt32(sqlDataReader["ID Bodega"]);
+                    level.shelf.hall.warehouse.name = sqlDataReader["ID Bodega"].ToString();
+
+                    list.Add(level);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }

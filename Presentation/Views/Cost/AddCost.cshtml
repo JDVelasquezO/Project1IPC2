@@ -1,5 +1,5 @@
 ﻿@{ 
-    var listWarehouses = ViewBag.ListWarehouses;
+    var listLevels = ViewBag.ListLevels;
     var listProducts = ViewBag.ListProducts;
 
     int idOperative = Convert.ToInt32(Session["operative"]);
@@ -16,13 +16,14 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <select>
-                                        <option value="" disabled selected>Escoger Bodega</option>
-                                        @foreach (var item in listWarehouses)
+                                        <option value="" disabled selected>Escoger Nivel</option>
+                                        @foreach (var item in listLevels)
                                         {
-                                            if (@item.idInventory == 1)
-                                            {
-                                                <option value="@item.idWarehouse">@item.name</option>
-                                            }
+                                        <option value="@item.id_level">
+                                            Nivel @item.id_level - Estante @item.shelf.letter - 
+                                            Pasillo @item.shelf.hall.id_hall - 
+                                            Bodega @item.shelf.hall.warehouse.name
+                                        </option>
                                         }
                                     </select>
                                 </div>
@@ -54,7 +55,8 @@
                     </div>
                 </div>
                 <div class="card-action">
-                    <a href="#">Escoger Estante</a>
+                    @Html.ActionLink("Escoger Estante", "ChooseHall",
+                    new { id = idOperative })
                 </div>
             </div>
         </div>

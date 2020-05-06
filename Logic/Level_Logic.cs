@@ -16,5 +16,10 @@ namespace Logic
         {
             return logic_Data.InsertLevel(level);
         }
+
+        public List<Level_Entity> getLevelsByClientBusiness(int idClientBusiness)
+        {
+            return logic_Data.getLevelsByClientBusiness(idClientBusiness);
+        }
     }
 }
