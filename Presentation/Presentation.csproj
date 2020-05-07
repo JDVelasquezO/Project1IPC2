@@ -152,6 +152,7 @@
     <Content Include="Views\Cost\AddCost.cshtml" />
     <Content Include="Views\Inventory\LookCostLots.cshtml" />
     <Content Include="Views\Cost\ChooseHall.cshtml" />
+    <Content Include="Views\Inventory\LookCostBalances.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

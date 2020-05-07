@@ -21,6 +21,11 @@ namespace Presentation.Controllers
             return View();
         }
 
+        public ActionResult LookCostBalances(int id)
+        {
+            return View(userOperative.getIdClientBusiness(id));
+        }
+
         public ActionResult LookWarehouse(int id)
         {
             return View(userOperative.getIdClientBusiness(id));
