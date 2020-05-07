@@ -16,5 +16,10 @@ namespace Logic
         {
             return costData.addCostInboundTransaction(inbound);
         }
+
+        public List<InboundTransaction> GetInboundTransactions(string nameProd, string nameLogic)
+        {
+            return costData.GetInboundTransactions(nameProd, nameLogic);
+        }
     }
 }

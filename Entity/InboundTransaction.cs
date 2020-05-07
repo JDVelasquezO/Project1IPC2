@@ -13,6 +13,7 @@ namespace Entity
         public int quantityLots { get; set; }
         public float totalCost { get; set; }
         public string logic { get; set; }
+        public string date { get; set; }
         public Product_Entity product = new Product_Entity();
         public Level_Entity level = new Level_Entity();
         public Provider_Entity provider = new Provider_Entity();

@@ -90,5 +90,52 @@ namespace DataAccess
 
             return response;
         }
+
+        public List<InboundTransaction> GetInboundTransactions(string nameProd, string nameLogic)
+        {
+            List<InboundTransaction> list = new List<InboundTransaction>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("getInboundTransactions", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_nameProd = new SqlParameter();
+                p_nameProd.ParameterName = "@name_prod";
+                p_nameProd.SqlDbType = SqlDbType.VarChar;
+                p_nameProd.Value = nameProd;
+
+                SqlParameter p_logic = new SqlParameter();
+                p_logic.ParameterName = "@logic";
+                p_logic.SqlDbType = SqlDbType.VarChar;
+                p_logic.Value = nameLogic;
+
+                sqlCommand.Parameters.Add(p_nameProd);
+                sqlCommand.Parameters.Add(p_logic);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    InboundTransaction inbound = new InboundTransaction();
+                    inbound.idInboundTransaction = Convert.ToInt32(sqlDataReader["quantityProduct"]);
+                    inbound.quantityProds = Convert.ToInt32(sqlDataReader["quantityProduct"]);
+                    inbound.product.name = sqlDataReader["name_product"].ToString();
+                    inbound.product.description = sqlDataReader["descripttion"].ToString();
+                    inbound.logic = sqlDataReader["logic"].ToString();
+                    inbound.date = sqlDataReader["date_transaction"].ToString();
+
+                    list.Add(inbound);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }

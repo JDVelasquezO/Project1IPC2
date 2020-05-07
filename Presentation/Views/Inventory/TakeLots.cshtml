@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "LookCostLots";
+    ViewBag.Title = "TakeLots";
     Layout = "~/Views/Layouts/_LayoutOperative.cshtml";
 
     int idOperative = Convert.ToInt32(Session["operative"]);
@@ -13,13 +13,19 @@
                 &nbsp;&nbsp;
                 <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
                 <a href="/Inventory/Index" class="breadcrumb">Inventario</a>
-                <a href="#" class="breadcrumb">Entrada de Lotes</a>
+                <a href="#" class="breadcrumb">Salida de Lotes</a>
             </div>
         </div>
     </nav>
 
     @{
-        Html.RenderAction("AddCost", "Cost", new { id = idOperative });
+        Html.RenderAction("TakeLot", "Cost", new { id = idOperative });
     }
-
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>

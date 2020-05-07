@@ -65,5 +65,44 @@ namespace DataAccess
 
             return response;
         }
+
+        public List<Warehouse_Entity> getWarehouseByClientBusiness(int idClientBusiness)
+        {
+            List<Warehouse_Entity> list = new List<Warehouse_Entity>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("return_warehouse", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@idClientBusiness";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = idClientBusiness;
+
+                sqlCommand.Parameters.Add(id_parameter);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Warehouse_Entity warehouse = new Warehouse_Entity();
+                    warehouse.idWarehouse = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    warehouse.name = sqlDataReader["Nombre"].ToString();
+                    warehouse.description = sqlDataReader["Descripcion"].ToString();
+                    warehouse.address = sqlDataReader["Direccion"].ToString();
+
+                    list.Add(warehouse);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }

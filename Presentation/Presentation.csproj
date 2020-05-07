@@ -153,6 +153,8 @@
     <Content Include="Views\Inventory\LookCostLots.cshtml" />
     <Content Include="Views\Cost\ChooseHall.cshtml" />
     <Content Include="Views\Inventory\LookCostBalances.cshtml" />
+    <Content Include="Views\Inventory\TakeLots.cshtml" />
+    <Content Include="Views\Cost\TakeLot.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

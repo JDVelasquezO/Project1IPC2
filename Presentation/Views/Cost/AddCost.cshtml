@@ -54,7 +54,7 @@
                                         <label for="last_name">Costo total de movimiento</label>
                                     </div>
 
-                                    <div class="input-field col s4">
+                                    <div class="input-field col s6">
                                         <select name="selectLogic">
                                             <option value="" disabled selected>Escoger Lógica</option>
                                             <option value="UEPS">UEPS</option>
@@ -63,7 +63,7 @@
                                         <label>Lógica de E/S</label>
                                     </div>
 
-                                    <div class="input-field col s4">
+                                    <div class="input-field col s6">
                                         <select name="selectProvider">
                                             <option value="" disabled selected>Escoger Proveedor</option>
                                             @foreach (var item in listProviders)
@@ -71,15 +71,6 @@
                                                 <option value="@item.id_provider">@item.name_provider</option>
                                             }
                                         </select>
-                                    </div>
-
-                                    <div class="input-field col s4">
-                                        <select name="selectTransaction">
-                                            <option value="" disabled selected>Escoger Transaccion</option>
-                                            <option value="Entrada">Entrada</option>
-                                            <option value="Salida">Salida</option>
-                                        </select>
-                                        <label>Tipo de Transacción</label>
                                     </div>
                                 </div>
                             </div>

@@ -35,25 +35,34 @@
                     </li>
                     <li>
                         <div class="collapsible-header">
-                            <i class="material-icons">euro_symbol</i>
-                            Gestión de Costos
+                            <i class="material-icons">event_available</i>
+                            Transacciones entre Bodegas
                         </div>
                         <div class="collapsible-body">
                             <p>Enviar lotes de productos a bodegas.</p>
-                            @Html.ActionLink("Establecer Costos Lotes", "LookCostLots",
-                            new { id = idOperative })<br />
-                            @Html.ActionLink("Establecer Costos Saldo", "LookCostBalances",
-                            new { id = idOperative })
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            <i class="material-icons">event_available</i>
-                            Transacciones por Bodega
-                        </div>
-                        <div class="collapsible-body">
-                            <p>Ingresar o extraer productos de bodegas.</p>
-                            <a class="waves-effect waves-light btn-small">Ir a Aplicacion</a>
+
+                            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Entradas</a>
+                            <!-- Dropdown Structure -->
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li>
+                                    @Html.ActionLink("Lotes", "LookCostLots",
+                                    new { id = idOperative })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Saldo", "LookCostBalances",
+                                    new { id = idOperative })
+                                </li>
+                            </ul>
+
+                            <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Salidas</a>
+                            <!-- Dropdown Structure -->
+                            <ul id='dropdown2' class='dropdown-content'>
+                                <li>
+                                    @Html.ActionLink("Lotes", "TakeLots",
+                                    new { id = idOperative })
+                                </li>
+                                <li><a href="#!">Saldo</a></li>
+                            </ul>
                         </div>
                     </li>
                     <li>
@@ -85,5 +94,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.collapsible');
         var instances = M.Collapsible.init(elems);
+
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems);
     });
 </script>

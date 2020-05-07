@@ -1,0 +1,118 @@
+﻿@{ 
+    var listProducts = ViewBag.ListProducts;
+}
+
+<div class="row">
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Obtener Registros de Bodegas</span>
+                    <div class="row" id="app">
+                        <div class="input-field col s5">
+                            <select id="products" name="selectProd">
+                                <option value="" disabled selected>Escoger Producto</option>
+                                @foreach (var item in listProducts)
+                                {
+                                    <option value="@item.id_product">@item.name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="input-field col s3">
+                            <select id="logics" name="selectLogic">
+                                <option value="" disabled selected>Escoger Lógica</option>
+                                <option value="UEPS">UEPS</option>
+                                <option value="PEPS">PEPS</option>
+                            </select>
+                            <label>Lógica de E/S</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <a v-on:click='searchProd' class="waves-effect waves-light btn">Buscar Producto</a>
+                        </div>
+                    </div>
+
+                    <table id="table"></table>
+
+                    <div class="row">
+                        <div class="row">
+                            <div class="col s12">
+                                Colocar el numero de elementos a sacar:
+                                <div class="input-field inline">
+                                    <input id="email_inline" type="number" class="validate">
+                                    <label for="email_inline">Cantidad</label>
+                                </div><br />
+                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                    Vender
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            lots: [],
+            nameProd: '',
+            nameLogic: ''
+        },
+        methods: {
+            searchProd() {
+
+                let selectProd = document.getElementById("products")
+                let selectLogics = document.getElementById("logics")
+                this.nameProd = selectProd.options[selectProd.selectedIndex].text;
+                this.nameLogic = selectLogics.options[selectLogics.selectedIndex].text;
+
+                axios.post('/Cost/getLot', {
+                    nameProd: this.nameProd,
+                    nameLogic: this.nameLogic
+                })
+                .then(response => {
+                    this.lots = response.data;
+                    console.log(this.lots);
+                    this.showTable()
+                })
+            },
+
+            showTable() {
+                
+                document.getElementById('table').innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Descripcion</th>
+                                <th>Cantidad</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                    <tbody>`
+
+                    this.lots.map(lot => {
+                        document.getElementById('table').innerHTML += `
+
+                         <tr>
+                            <td>${lot.idInboundTransaction}</td>
+                            <td>${lot.product.name}</td>
+                            <td>${lot.product.description}</td>
+                            <td>${lot.quantityProds}</td>
+                            <td>${lot.date}</td>
+                        </tr>   
+                        `        
+                    })
+                document.getElementById('table').innerHTML += `
+                    </tbody >`
+            }
+        }
+    })
+</script>

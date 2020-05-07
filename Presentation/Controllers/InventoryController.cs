@@ -30,5 +30,10 @@ namespace Presentation.Controllers
         {
             return View(userOperative.getIdClientBusiness(id));
         }
+
+        public ActionResult TakeLots(int id)
+        {
+            return View();
+        }
     }
 }
