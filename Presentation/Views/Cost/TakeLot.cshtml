@@ -1,14 +1,15 @@
 ﻿@{ 
     var listProducts = ViewBag.ListProducts;
+    int id = Convert.ToInt32(Session["operative"]);
 }
 
 <div class="row">
     <div class="row">
         <div class="col s12">
-            <div class="card">
+            <div id="app" class="card">
                 <div class="card-content">
                     <span class="card-title">Obtener Registros de Bodegas</span>
-                    <div class="row" id="app">
+                    <div class="row">
                         <div class="input-field col s5">
                             <select id="products" name="selectProd">
                                 <option value="" disabled selected>Escoger Producto</option>
@@ -39,10 +40,10 @@
                             <div class="col s12">
                                 Colocar el numero de elementos a sacar:
                                 <div class="input-field inline">
-                                    <input id="email_inline" type="number" class="validate">
-                                    <label for="email_inline">Cantidad</label>
+                                    <input v-model="quantityToSell" name="quantityToSell" type="number" class="validate">
+                                    <label for="quantityToSell">Cantidad</label>
                                 </div><br />
-                                <button class="btn waves-effect waves-light" type="submit" name="action">
+                                <button v-on:click="sellProds" class="btn waves-effect waves-light" type="submit" name="action">
                                     Vender
                                     <i class="material-icons right">send</i>
                                 </button>
@@ -63,7 +64,8 @@
         data: {
             lots: [],
             nameProd: '',
-            nameLogic: ''
+            nameLogic: '',
+            quantityToSell: 0
         },
         methods: {
             searchProd() {
@@ -112,6 +114,18 @@
                     })
                 document.getElementById('table').innerHTML += `
                     </tbody >`
+            },
+
+            sellProds() {
+
+                axios.post('/InboundTransaction/SellProducts', {
+                    name: this.nameProd,
+                    logic: this.nameLogic,
+                    quantityToSell: this.quantityToSell
+                })
+                    .then(response => {
+                        window.location.href = "/Inventory/Index/"
+                })
             }
         }
     })

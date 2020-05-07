@@ -47,6 +47,7 @@
     <Compile Include="Cost_Data.cs" />
     <Compile Include="CreditCard_Data.cs" />
     <Compile Include="Hall_Data.cs" />
+    <Compile Include="InboundTransaction_Data.cs" />
     <Compile Include="Level_Data.cs" />
     <Compile Include="Module_Data.cs" />
     <Compile Include="Product_Data.cs" />
