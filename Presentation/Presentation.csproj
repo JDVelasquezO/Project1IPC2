@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\BalanceController.cs" />
     <Compile Include="Controllers\ClientBusinessController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CostController.cs" />

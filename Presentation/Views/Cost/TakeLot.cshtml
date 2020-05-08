@@ -123,8 +123,8 @@
                     logic: this.nameLogic,
                     quantityToSell: this.quantityToSell
                 })
-                    .then(response => {
-                        window.location.href = "/Inventory/Index/"
+                .then(response => {
+                    window.location.href = `/Inventory/TakeLots/${@id}`;
                 })
             }
         }

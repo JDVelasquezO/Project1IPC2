@@ -22,9 +22,20 @@
                                 </select>
                                 <a v-on:click='searchProd' class="waves-effect waves-light btn">Buscar</a>
                             </div>
+                            <div class="col s9">
+                                <div class="input-field inline">
+                                    <input autofocus v-model='quantity' type="number" class="validate">
+                                    <label for="quantityToSell">Cantidad</label>
+                                </div>
+
+                                <div class="input-field inline">
+                                    <input v-model="idProd" type="number" class="validate">
+                                    <label for="idProd">ID de producto</label>
+                                </div>
+                                <a v-on:click="sellProds" class="waves-effect waves-light btn-small">Sacar</a>
+                            </div>
 
                             <table id="table"></table>
-                            <br /><br />
                         </div>
                     </div>
                 </div>
@@ -41,7 +52,8 @@
         data: {
             balances: [],
             nameProd: '',
-            quantityToSell: 0
+            idProd: 0,
+            quantity: 0
         },
         methods: {
             searchProd() {
@@ -72,7 +84,6 @@
                                 <th>Estante</th>
                                 <th>Pasillo</th>
                                 <th>Bodega</th>
-                                <th>Acciones</th>
                             </tr>
                         </thead>
                     <tbody>`
@@ -89,31 +100,22 @@
                             <td>${balance.level.shelf.letter}</td>
                             <td>${balance.level.shelf.hall.id_hall}</td>
                             <td>${balance.level.shelf.hall.warehouse.name}</td>
-                            <td>
-                                <div class="input-field inline">
-                                    <input v-model="quantityToSell" name="quantityToSell" type="number" class="validate">
-                                    <label for="quantityToSell">Cantidad</label>
-                                </div>
-                                <a class="waves-effect waves-light btn-small">Sacar</a>
-                            </td>
                         </tr>
                         `
                 })
                 document.getElementById('table').innerHTML += `
                     </tbody >`
-            }
+            },
 
-            /*sellProds() {
-
-                axios.post('/InboundTransaction/SellProducts', {
-                    name: this.nameProd,
-                    logic: this.nameLogic,
-                    quantityToSell: this.quantityToSell
+            sellProds() {
+                axios.post('/Balance/SellProducts', {
+                    id: this.idProd,
+                    quantity: this.quantity
                 })
-                    .then(response => {
-                        window.location.href = "/Inventory/Index/"
-                    })
-            }*/
+                .then(response => {
+                    window.location.href = "/Inventory/Index/"
+                })
+            }
         }
     })
 </script>

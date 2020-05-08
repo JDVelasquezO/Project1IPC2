@@ -56,5 +56,42 @@ namespace DataAccess
 
             return list;
         }
+
+        public bool sellProducts(int quantityToSell, int idInboundBalance)
+        {
+            bool response = false;
+
+            try
+            {
+                sqlConnection.Open();
+                
+                sqlCommand = new SqlCommand("SellBalances", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_quantity = new SqlParameter();
+                p_quantity.ParameterName = "@desiredQuantity";
+                p_quantity.SqlDbType = SqlDbType.Int;
+                p_quantity.Value = quantityToSell;
+
+                SqlParameter p_id = new SqlParameter();
+                p_id.ParameterName = "@idInboundBalance";
+                p_id.SqlDbType = SqlDbType.Int;
+                p_id.Value = idInboundBalance;
+
+                sqlCommand.Parameters.Add(p_quantity);
+                sqlCommand.Parameters.Add(p_id);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }

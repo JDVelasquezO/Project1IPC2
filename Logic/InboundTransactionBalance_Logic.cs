@@ -16,5 +16,10 @@ namespace Logic
         {
             return balance.getInboundBalance(id);
         }
+
+        public bool sellProducts(int quantityToSell, int idInboundBalance)
+        {
+            return balance.sellProducts(quantityToSell, idInboundBalance);
+        }
     }
 }
