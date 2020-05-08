@@ -1,0 +1,119 @@
+﻿@{
+    var listProducts = ViewBag.ListProducts;
+    int id = Convert.ToInt32(Session["operative"]);
+}
+
+<div class="row">
+    <div class="row">
+        <div class="col s12">
+            <div id="app" class="card">
+                <div class="card-content">
+                    <span class="card-title">Obtener Registros de Bodegas</span>
+                    <div class="row">
+                        <div id="app" class="row">
+
+                            <div class="input-field col s3">
+                                <select id="products" name="selectProd">
+                                    <option value="" disabled selected>Escoger Producto</option>
+                                    @foreach (var item in listProducts)
+                                    {
+                                        <option value="@item.id_product">@item.name</option>
+                                    }
+                                </select>
+                                <a v-on:click='searchProd' class="waves-effect waves-light btn">Buscar</a>
+                            </div>
+
+                            <table id="table"></table>
+                            <br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            balances: [],
+            nameProd: '',
+            quantityToSell: 0
+        },
+        methods: {
+            searchProd() {
+
+                let selectProd = document.getElementById("products")
+                this.nameProd = selectProd.options[selectProd.selectedIndex].text;
+
+                axios.post('/Cost/getBalance', {
+                    id: @id,
+                    nameProd: this.nameProd
+                })
+                .then(response => {
+                    this.balances = response.data;
+                    console.log(this.balances);
+                    this.showTable()
+                })
+            },
+
+            showTable() {
+                document.getElementById('table').innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Descripcion</th>
+                                <th>Cantidad</th>
+                                <th>Nivel</th>
+                                <th>Estante</th>
+                                <th>Pasillo</th>
+                                <th>Bodega</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                    <tbody>`
+
+                this.balances.map(balance => {
+                    document.getElementById('table').innerHTML += `
+
+                         <tr>
+                            <td>${balance.idInboundTransaction}</td>
+                            <td>${balance.product.name}</td>
+                            <td>${balance.product.description}</td>
+                            <td>${balance.quantityProds}</td>
+                            <td>${balance.level.id_level}</td>
+                            <td>${balance.level.shelf.letter}</td>
+                            <td>${balance.level.shelf.hall.id_hall}</td>
+                            <td>${balance.level.shelf.hall.warehouse.name}</td>
+                            <td>
+                                <div class="input-field inline">
+                                    <input v-model="quantityToSell" name="quantityToSell" type="number" class="validate">
+                                    <label for="quantityToSell">Cantidad</label>
+                                </div>
+                                <a class="waves-effect waves-light btn-small">Sacar</a>
+                            </td>
+                        </tr>
+                        `
+                })
+                document.getElementById('table').innerHTML += `
+                    </tbody >`
+            }
+
+            /*sellProds() {
+
+                axios.post('/InboundTransaction/SellProducts', {
+                    name: this.nameProd,
+                    logic: this.nameLogic,
+                    quantityToSell: this.quantityToSell
+                })
+                    .then(response => {
+                        window.location.href = "/Inventory/Index/"
+                    })
+            }*/
+        }
+    })
+</script>

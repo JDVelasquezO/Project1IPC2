@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "TakeBalances";
+    Layout = "~/Views/Layouts/_LayoutOperative.cshtml";
+
+    int idOperative = Convert.ToInt32(Session["operative"]);
+}
+
+<div class="container">
+    <nav>
+        <div class="nav-wrapper blue">
+            <div class="col s12">
+                &nbsp;&nbsp;
+                <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
+                <a href="/Inventory/Index" class="breadcrumb">Inventario</a>
+                <a href="#" class="breadcrumb">Salida de Saldos</a>
+            </div>
+        </div>
+    </nav>
+
+    @{
+        Html.RenderAction("TakeBalance", "Cost", new { id = idOperative });
+    }
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>

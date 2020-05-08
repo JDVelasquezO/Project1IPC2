@@ -75,7 +75,7 @@
                 this.nameProd = selectProd.options[selectProd.selectedIndex].text;
                 this.nameLogic = selectLogics.options[selectLogics.selectedIndex].text;
 
-                axios.post('/Cost/getLot', {
+                axios.post('/Cost/getBalance', {
                     nameProd: this.nameProd,
                     nameLogic: this.nameLogic
                 })

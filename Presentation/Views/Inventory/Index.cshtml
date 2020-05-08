@@ -61,7 +61,10 @@
                                     @Html.ActionLink("Lotes", "TakeLots",
                                     new { id = idOperative })
                                 </li>
-                                <li><a href="#!">Saldo</a></li>
+                                <li>
+                                    @Html.ActionLink("Saldo", "TakeBalances",
+                                    new { id = idOperative })
+                                </li>
                             </ul>
                         </div>
                     </li>

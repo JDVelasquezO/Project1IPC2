@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using Entity;
+using Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,10 @@ namespace Presentation.Controllers
     public class InventoryController : Controller
     {
         UserOperative_Logic userOperative = new UserOperative_Logic();
+        InboundTransactionBalance_Logic balance = new InboundTransactionBalance_Logic();
+
+        List<InboundTransactionBalance> listBalances = new List<InboundTransactionBalance>();
+
         // GET: Inventory
         public ActionResult Index()
         {
@@ -29,6 +34,11 @@ namespace Presentation.Controllers
         public ActionResult LookCostBalances(int id)
         {
             return View(userOperative.getIdClientBusiness(id));
+        }
+
+        public ActionResult TakeBalances(int id)
+        {
+            return View();
         }
 
         public ActionResult LookWarehouse(int id)

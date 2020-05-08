@@ -202,5 +202,54 @@ namespace DataAccess
 
             return list;
         }
+
+        public List<InboundTransactionBalance> GetInboundTransactionsBalances(int id, string nameProd)
+        {
+            List<InboundTransactionBalance> list = new List<InboundTransactionBalance>();
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("get_inbound_balance", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_nameProd = new SqlParameter();
+                p_nameProd.ParameterName = "@nameProd";
+                p_nameProd.SqlDbType = SqlDbType.VarChar;
+                p_nameProd.Value = nameProd;
+
+                SqlParameter id_parameter = new SqlParameter();
+                id_parameter.ParameterName = "@fkIdClientBusiness";
+                id_parameter.SqlDbType = SqlDbType.Int;
+                id_parameter.Value = id;
+
+                sqlCommand.Parameters.Add(p_nameProd);
+                sqlCommand.Parameters.Add(id_parameter);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    InboundTransactionBalance balance = new InboundTransactionBalance();
+                    balance.idInboundTransaction = Convert.ToInt32(sqlDataReader["Identificador"]);
+                    balance.quantityProds = Convert.ToInt32(sqlDataReader["Cantidad"]);
+                    balance.product.name = sqlDataReader["Nombre"].ToString();
+                    balance.product.description = sqlDataReader["Descripcion"].ToString();
+                    balance.level.id_level = Convert.ToInt32(sqlDataReader["Nivel"]);
+                    balance.level.shelf.letter = sqlDataReader["Estante"].ToString();
+                    balance.level.shelf.hall.id_hall = Convert.ToInt32(sqlDataReader["Pasillo"]);
+                    balance.level.shelf.hall.warehouse.name = sqlDataReader["Bodega"].ToString();
+
+                    list.Add(balance);
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return list;
+        }
     }
 }

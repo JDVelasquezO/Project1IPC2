@@ -47,6 +47,7 @@
     <Compile Include="Cost_Logic.cs" />
     <Compile Include="CreditCard_Logic.cs" />
     <Compile Include="Hall_Logic.cs" />
+    <Compile Include="InboundTransactionBalance_Logic.cs" />
     <Compile Include="InboundTransaction_Logic.cs" />
     <Compile Include="Level_Logic.cs" />
     <Compile Include="Module_Logic.cs" />

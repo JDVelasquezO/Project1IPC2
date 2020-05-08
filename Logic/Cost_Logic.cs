@@ -26,5 +26,10 @@ namespace Logic
         {
             return costData.GetInboundTransactions(nameProd, nameLogic);
         }
+
+        public List<InboundTransactionBalance> GetInboundTransactionsBalances(int id, string nameProd)
+        {
+            return costData.GetInboundTransactionsBalances(id, nameProd);
+        }
     }
 }

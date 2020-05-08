@@ -157,6 +157,8 @@
     <Content Include="Views\Inventory\TakeLots.cshtml" />
     <Content Include="Views\Cost\TakeLot.cshtml" />
     <Content Include="Views\Cost\AddCostBalance.cshtml" />
+    <Content Include="Views\Inventory\TakeBalances.cshtml" />
+    <Content Include="Views\Cost\TakeBalance.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -168,6 +170,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Public\" />
+    <Folder Include="Views\Balance\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">

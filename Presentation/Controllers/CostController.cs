@@ -17,7 +17,9 @@ namespace Presentation.Controllers
         Provider_Logic provider_Logic = new Provider_Logic();
         Cost_Logic cost_Logic = new Cost_Logic();
         Warehouse_Logic warehouse_Logic = new Warehouse_Logic();
-        
+        InboundTransactionBalance_Logic balance = new InboundTransactionBalance_Logic();
+
+        List<InboundTransactionBalance> listBalances = new List<InboundTransactionBalance>();
         List<Product_Entity> list_products = new List<Product_Entity>();
         List<Level_Entity> list_levels = new List<Level_Entity>();
         List<Provider_Entity> list_providers = new List<Provider_Entity>();
@@ -55,11 +57,31 @@ namespace Presentation.Controllers
             return View();
         }
 
+        public ActionResult TakeBalance(int id)
+        {
+            int idClientBusiness = userOperative.getIdClientBusiness(id);
+
+            list_products = product_Logic.getProductsOfClient(idClientBusiness);
+            ViewBag.ListProducts = list_products;
+
+            return View();
+        }
+
         public string getLot(string nameProd, string nameLogic)
         {
             var list_lots = cost_Logic.GetInboundTransactions(nameProd, nameLogic);
             var jsonSerialiser = new JavaScriptSerializer();
             var json = jsonSerialiser.Serialize(list_lots);
+            return json;
+        }
+
+        public string getBalance(int id, string nameProd)
+        {
+            int idClientBusiness = userOperative.getIdClientBusiness(id);
+
+            var list_balances = cost_Logic.GetInboundTransactionsBalances(idClientBusiness, nameProd);
+            var jsonSerialiser = new JavaScriptSerializer();
+            var json = jsonSerialiser.Serialize(list_balances);
             return json;
         }
 
