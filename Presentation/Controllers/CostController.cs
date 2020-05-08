@@ -100,7 +100,6 @@ namespace Presentation.Controllers
             inboundTransactionBalance.provider.id_provider = Convert.ToInt32(selectProvider);
             inboundTransactionBalance.quantityProds = Convert.ToInt32(quantity);
             inboundTransactionBalance.totalCost = float.Parse(costTotal);
-            inboundTransactionBalance.logic = selectLogic;
 
             if (cost_Logic.addCostInboundTransactionBalance(inboundTransactionBalance))
             {

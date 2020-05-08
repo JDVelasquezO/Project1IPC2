@@ -59,19 +59,13 @@ namespace DataAccess
                 p_totalCost.ParameterName = "@totalCost";
                 p_totalCost.SqlDbType = SqlDbType.Float;
                 p_totalCost.Value = inboundBalance.totalCost;
-
-                SqlParameter p_logic = new SqlParameter();
-                p_logic.ParameterName = "@logic";
-                p_logic.SqlDbType = SqlDbType.VarChar;
-                p_logic.Value = inboundBalance.logic;
-
+                
                 sqlCommand.Parameters.Add(p_idProd);
                 sqlCommand.Parameters.Add(p_idWarehouse);
                 sqlCommand.Parameters.Add(p_idProvider);
                 sqlCommand.Parameters.Add(p_quantity);
                 sqlCommand.Parameters.Add(p_costProd);
                 sqlCommand.Parameters.Add(p_totalCost);
-                sqlCommand.Parameters.Add(p_logic);
 
                 sqlCommand.ExecuteNonQuery();
 
