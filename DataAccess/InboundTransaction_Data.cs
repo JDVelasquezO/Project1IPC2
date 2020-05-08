@@ -21,7 +21,16 @@ namespace DataAccess
             try
             {
                 sqlConnection.Open();
-                sqlCommand = new SqlCommand("TransferOut", sqlConnection);
+
+                if (logic == "PEPS")
+                {
+                    sqlCommand = new SqlCommand("TransferOut", sqlConnection);
+                }
+                else
+                {
+                    sqlCommand = new SqlCommand("TransferOutlotUEPS", sqlConnection);
+                }
+
                 sqlCommand.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter p_logic = new SqlParameter();

@@ -21,6 +21,11 @@ namespace Presentation.Controllers
             return View();
         }
 
+        public ActionResult TakeLots(int id)
+        {
+            return View();
+        }
+
         public ActionResult LookCostBalances(int id)
         {
             return View(userOperative.getIdClientBusiness(id));
@@ -29,11 +34,6 @@ namespace Presentation.Controllers
         public ActionResult LookWarehouse(int id)
         {
             return View(userOperative.getIdClientBusiness(id));
-        }
-
-        public ActionResult TakeLots(int id)
-        {
-            return View();
         }
     }
 }

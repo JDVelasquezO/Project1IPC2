@@ -48,6 +48,7 @@
     <Compile Include="CreditCard_Entity.cs" />
     <Compile Include="Hall_Entity.cs" />
     <Compile Include="InboundTransaction.cs" />
+    <Compile Include="InboundTransactionBalance.cs" />
     <Compile Include="Level_Entity.cs" />
     <Compile Include="Module_Entity.cs" />
     <Compile Include="Module_Subscription_Entity.cs" />

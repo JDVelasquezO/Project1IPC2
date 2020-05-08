@@ -64,8 +64,7 @@ namespace Presentation.Controllers
         }
 
         public ActionResult InsertCost(string selectLevel, string selectProd, string quantity, 
-            string quantityLots, string costTotal, string selectLogic, string selectProvider,
-            string selectTransaction)
+            string quantityLots, string costTotal, string selectLogic, string selectProvider)
         {
             string script = "";
 
@@ -90,8 +89,44 @@ namespace Presentation.Controllers
             return Content(script);
         }
 
-        public ActionResult ChooseHall()
+        public ActionResult InsertCostBalance(string selectLevel, string selectProd, string quantity,
+            string costTotal, string selectLogic, string selectProvider)
         {
+            string script = "";
+
+            InboundTransactionBalance inboundTransactionBalance = new InboundTransactionBalance();
+            inboundTransactionBalance.product.id_product = Convert.ToInt32(selectProd);
+            inboundTransactionBalance.level.id_level = Convert.ToInt32(selectProd);
+            inboundTransactionBalance.provider.id_provider = Convert.ToInt32(selectProvider);
+            inboundTransactionBalance.quantityProds = Convert.ToInt32(quantity);
+            inboundTransactionBalance.totalCost = float.Parse(costTotal);
+            inboundTransactionBalance.logic = selectLogic;
+
+            if (cost_Logic.addCostInboundTransactionBalance(inboundTransactionBalance))
+            {
+                script = "<script>alert('Se ingreso correctamente');</script>";
+            }
+            else
+            {
+                script = "<script>alert('No se ingreso');</script>";
+            }
+
+            return Content(script);
+        }
+
+        public ActionResult AddCostBalance(int id)
+        {
+            int idClientBusiness = userOperative.getIdClientBusiness(id);
+
+            list_levels = level_Logic.getLevelsByClientBusiness(idClientBusiness);
+            ViewBag.ListLevels = list_levels;
+
+            list_providers = provider_Logic.getLevelsByClientBusiness();
+            ViewBag.ListProviders = list_providers;
+
+            list_products = product_Logic.getProductsOfClient(idClientBusiness);
+            ViewBag.ListProducts = list_products;
+
             return View();
         }
    

@@ -13,13 +13,13 @@
                 &nbsp;&nbsp;
                 <a href="/Index/HomeOperative" class="breadcrumb">Home</a>
                 <a href="/Inventory/Index" class="breadcrumb">Inventario</a>
-                <a href="#" class="breadcrumb">Costos</a>
+                <a href="#" class="breadcrumb">Saldos</a>
             </div>
         </div>
     </nav>
 
     @{
-        Html.RenderAction("AddCost", "Cost", new { id = idOperative });
+        Html.RenderAction("AddCostBalance", "Cost", new { id = idOperative });
     }
 
 </div>

@@ -16,6 +16,77 @@ namespace DataAccess
         SqlCommand sqlCommand;
         Product_Data product_Data = new Product_Data();
 
+        // INSERTAR SALDOS
+        public bool addCostInboundTransactionBalance(InboundTransactionBalance inboundBalance)
+        {
+            bool response = false;
+            float priceProduct = 0;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("insertInboundTransactionBalance", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p_idProd = new SqlParameter();
+                p_idProd.ParameterName = "@fkIdProd";
+                p_idProd.SqlDbType = SqlDbType.Int;
+                p_idProd.Value = inboundBalance.product.id_product;
+
+                priceProduct = product_Data.getCostProductById(inboundBalance.product.id_product);
+
+                SqlParameter p_idWarehouse = new SqlParameter();
+                p_idWarehouse.ParameterName = "@fkIdLevel";
+                p_idWarehouse.SqlDbType = SqlDbType.Int;
+                p_idWarehouse.Value = inboundBalance.level.id_level;
+
+                SqlParameter p_idProvider = new SqlParameter();
+                p_idProvider.ParameterName = "@fkIdProvider";
+                p_idProvider.SqlDbType = SqlDbType.Int;
+                p_idProvider.Value = inboundBalance.provider.id_provider;
+
+                SqlParameter p_quantity = new SqlParameter();
+                p_quantity.ParameterName = "@quantityProd";
+                p_quantity.SqlDbType = SqlDbType.Int;
+                p_quantity.Value = inboundBalance.quantityProds;
+                
+                SqlParameter p_costProd = new SqlParameter();
+                p_costProd.ParameterName = "@costProd";
+                p_costProd.SqlDbType = SqlDbType.Float;
+                p_costProd.Value = priceProduct;
+
+                SqlParameter p_totalCost = new SqlParameter();
+                p_totalCost.ParameterName = "@totalCost";
+                p_totalCost.SqlDbType = SqlDbType.Float;
+                p_totalCost.Value = inboundBalance.totalCost;
+
+                SqlParameter p_logic = new SqlParameter();
+                p_logic.ParameterName = "@logic";
+                p_logic.SqlDbType = SqlDbType.VarChar;
+                p_logic.Value = inboundBalance.logic;
+
+                sqlCommand.Parameters.Add(p_idProd);
+                sqlCommand.Parameters.Add(p_idWarehouse);
+                sqlCommand.Parameters.Add(p_idProvider);
+                sqlCommand.Parameters.Add(p_quantity);
+                sqlCommand.Parameters.Add(p_costProd);
+                sqlCommand.Parameters.Add(p_totalCost);
+                sqlCommand.Parameters.Add(p_logic);
+
+                sqlCommand.ExecuteNonQuery();
+
+                response = true;
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return response;
+        }
+
+        // INSERTAR LOTES
         public bool addCostInboundTransaction(InboundTransaction inbound)
         {
             bool response = false;
@@ -118,7 +189,7 @@ namespace DataAccess
                 while (sqlDataReader.Read())
                 {
                     InboundTransaction inbound = new InboundTransaction();
-                    inbound.idInboundTransaction = Convert.ToInt32(sqlDataReader["quantityProduct"]);
+                    inbound.idInboundTransaction = Convert.ToInt32(sqlDataReader["id_inbound"]);
                     inbound.quantityProds = Convert.ToInt32(sqlDataReader["quantityProduct"]);
                     inbound.product.name = sqlDataReader["name_product"].ToString();
                     inbound.product.description = sqlDataReader["descripttion"].ToString();

@@ -17,6 +17,11 @@ namespace Logic
             return costData.addCostInboundTransaction(inbound);
         }
 
+        public bool addCostInboundTransactionBalance(InboundTransactionBalance inboundBalance)
+        {
+            return costData.addCostInboundTransactionBalance(inboundBalance);
+        }
+
         public List<InboundTransaction> GetInboundTransactions(string nameProd, string nameLogic)
         {
             return costData.GetInboundTransactions(nameProd, nameLogic);
